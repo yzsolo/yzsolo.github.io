@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Aresy.z</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/star.css">
+	<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+
+ 	<script>
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?83e4c7b416fbace7d58c9d38d9331e21";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+</script>
+
+	<script>
+	$(function() {
+
+		$('canvas').fadeIn(4000,function() {
+			$(this).css('display','block');
+			h1();
+		})
+		function h1() {
+			$('h1').fadeIn(4000,function () {
+				$(this).css('display','block');
+			})
+		}
+		$('.manu').hover(function(){
+			$(this).animate({top:'0px'},500);
+		},function(){
+			$(this).animate({top:'-24px'},500);
+		})
+
+	})
+	</script>
+</head>
+<body>
+	<div class="manu">
+		<span name='1'><a href="index.html">star</a></span>
+		<span name='2'><a href="blog.html">About</a></span>
+	</div>
+	<div id='who'>
+		<h1>Ares<span name='yz'>y.z</span></h1>
+	</div>
+	<canvas id='yz_canvas' style='z-index:-10000;position:fixed;'></canvas>
+	<script src='js/star.js' name='js_selected'></script>
+</body>
+</html>

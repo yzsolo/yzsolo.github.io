@@ -1,0 +1,47 @@
+body {
+	background:#000;
+	overflow-y:hidden;
+}
+.manu {
+	width:262px;
+	height:34px;
+	position:absolute;
+	text-align:center;
+	top:-24px;
+	opacity:0.6;
+	background-color:#575755;
+}
+canvas {
+	display:none;
+}
+.manu span {
+	color:#000;
+	margin-left: 12px;
+	line-height:34px;
+}
+.manu span a {
+	color:#000;
+}
+#who {
+	width:233px;
+	height:72px;
+	margin:auto;
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+}
+.p_class {
+	color:#fff;
+}
+h1 {
+	display:none;
+	font-size:30px;
+	text-align:center;
+	font-weight:100;
+	font-family: "Microsoft YaHei" ! important;
+	text-shadow:0px 0px 10px #fff;
+	color:#000;
+	
+}
