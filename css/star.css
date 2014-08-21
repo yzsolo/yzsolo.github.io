@@ -1,5 +1,7 @@
 body {
-	background:#444;
+	/*background:#444;*/
+	/*background:#003366;*/
+	background:#022344;
 	overflow-y:hidden;
 }
 .manu {
@@ -38,6 +40,7 @@ a:hover {
 	margin-top:-160px;
 	margin-left:-135px;
 	position:absolute;
+	z-index:3000;
 	top:50%;
 	/*right:0;*/
 	/*bottom:0;*/
@@ -59,7 +62,16 @@ h1 {
 	margin: 0 0 12px 0;
 	left: 4px;
 }
-
+#box {
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:1000;
+}
+#box img {
+	width:100%;
+	height:100%;
+}
 #who p {
 	font-size: 14px;
 	line-height: 2em;
