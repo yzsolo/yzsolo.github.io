@@ -51,11 +51,12 @@ h1 {
 	font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
 	font-weight: 600;
 	font-size: 30px;
+	text-indent: 7px;
 	color: #eee;
-	padding: 0 15px;
-	letter-spacing: 9px;
+	padding: 0 10px;
+	letter-spacing: 8px;
 	text-transform: uppercase;
-	margin: 12px 0;
+	margin: 0 0 12px 0;
 	left: 4px;
 }
 
@@ -63,9 +64,20 @@ h1 {
 	font-size: 14px;
 	line-height: 2em;
 	text-align: center;
-	color: #fff;
+	color: #999;
 	margin: 0;
 	letter-spacing: 2px;
+}
+
+.intro{
+	color: #999;
+	font-size: 15px;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+#who span {
+	float:right;
 }
 
 
