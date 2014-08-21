@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>circle_move</title>
+	<script src="jquery.js"></script>
+	<style>
+	.circle{
+		width:50px;
+		height:50px;
+		border:1px solid #000;
+		position:absolute;
+		top:200px;
+		left:530px;
+		border-radius:25px;
+		background-color:#000;
+	}
+	.box{
+		width:300px;
+		height:300px;
+		border:1px solid #000;
+		border-radius:150px;
+		position:absolute;
+		top:75px;
+		left:255px;
+	}
+	</style>
+</head>
+<body>
+	<script>
+	$(function(){
+		var cir = $(".circle");
+		var top = cir.css('top');					  //#circle top值
+		var left1 = parseInt(cir.css('left')) - 150;  //确定一个原点
+
+		function move(r,top,left1){						
+			var f = 0;
+			var a = setInterval(function(){
+				if(f==r){
+					f = 0;
+					move_core();
+				}else{
+					move_core();
+				}
+			},10)
+
+			var move_core = function(){
+				var y = parseInt(top) - Math.sin(f*2*Math.PI/360) * 150;
+				var x = Math.cos(f*2*Math.PI/360) * 150 + left1;
+				cir.css({'top':y,'left':x});
+				f++;	
+			}
+
+		}
+
+		move(360,top,left1);
+		})
+	</script>
+	<div class="circle"></div>
+	<div class="box"></div>
+</body>
+</html>
