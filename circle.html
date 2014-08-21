@@ -3,7 +3,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>circle_move</title>
-	<script src="jquery.js"></script>
 	<style>
 	.circle{
 		width:50px;
@@ -27,6 +26,9 @@
 	</style>
 </head>
 <body>
+	<div class="circle"></div>
+	<div class="box"></div>
+	<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
 	<script>
 	$(function(){
 		var cir = $(".circle");
@@ -36,7 +38,7 @@
 		function move(r,top,left1){						
 			var f = 0;
 			var a = setInterval(function(){
-				if(f==r){
+				if(f == r){
 					f = 0;
 					move_core();
 				}else{
@@ -45,8 +47,8 @@
 			},10)
 
 			var move_core = function(){
-				var y = parseInt(top) - Math.sin(f*2*Math.PI/360) * 150;
-				var x = Math.cos(f*2*Math.PI/360) * 150 + left1;
+				var y = parseInt(top) - Math.sin(f * 2 * Math.PI/360) * 150;
+				var x = Math.cos(f * 2 * Math.PI / 360) * 150 + left1;
 				cir.css({'top':y,'left':x});
 				f++;	
 			}
@@ -56,7 +58,5 @@
 		move(360,top,left1);
 		})
 	</script>
-	<div class="circle"></div>
-	<div class="box"></div>
 </body>
 </html>
