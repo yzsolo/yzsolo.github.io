@@ -18,7 +18,7 @@ window.onload = function () {
 		y = (window.innerHeight-5)*Math.random(),
 		x_s = Math.random()*1/2-0.2,
 		y_s = Math.random()*1/2-0.2;
-		radius = Math.round(Math.random()*1)+0.5
+		radius = Math.round(Math.random()*1)+0.2
 	
 		var option = {
 			x:x,
