@@ -20,7 +20,8 @@ canvas {
 	line-height:34px;
 }
 .manu span a {
-	color:#000;
+	color:#fff;
+	text-decoration: none;
 }
 #who {
 	width:233px;
