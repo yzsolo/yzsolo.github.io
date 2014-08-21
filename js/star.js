@@ -43,7 +43,7 @@ window.onload = function () {
 	function draw_circle (j) {
 		con.beginPath();
 		con.fillStyle = stars[j].fillStyle;
-		con.arc(stars[j].x,stars[j].y,stars[j].radius,0,2 * Math.PI);
+		con.arc(stars[j].x, stars[j].y, stars[j].radius, 0, 2 * Math.PI);
 		con.closePath();
 		con.fill();
 	}
