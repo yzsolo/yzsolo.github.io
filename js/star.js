@@ -11,7 +11,7 @@ window.onload = function () {
 	can.width = window.innerWidth;
 	can.height = window.innerHeight;
 	var con = can.getContext('2d');
-	var x,y,x_s,y_s,x_f=1,y_f=1,stars = [],line_width=0.1,star_num=300;
+	var x,y,x_s,y_s,x_f=1,y_f=1,stars = [],line_width=0.1,star_num=400;
 
 	for (var i = 0; i < star_num; i++) {
 		x = (window.innerWidth-5)*Math.random(),
