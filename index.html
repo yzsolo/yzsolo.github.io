@@ -7,9 +7,6 @@
 	<link rel="stylesheet" href="css/star.css">
 </head>
 <body>
-	<div class="manu">
-		<span>为了达到良好的体验，建议用retina屏访问</span>
-	</div>
 	<div id="box">
 		<img src="img/back1.png" alt="">
 	</div>
@@ -29,20 +26,10 @@
 
 		$('canvas').fadeIn(4000,function() {
 			$(this).css('display','block');
-			h1();
-			$('.manu').animate({top: '0px'}, 1000, function(){
-				setInterval(function(){
-					$('.manu').animate({top: '-34px'},1000);
-			    },20000);
-			});
-		});
-		
-		function h1() {
 			$('#who').fadeIn(4000,function () {
 				$(this).css('display','block');
-			})
-		}
-
+			});
+		});
 
 	})
 	</script>

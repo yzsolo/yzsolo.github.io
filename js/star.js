@@ -14,9 +14,9 @@ window.onload = function () {
 	var x,y,x_s,y_s,x_f=1,y_f=1,stars = [],line_width=0.1,star_num=300;
 
 	for (var i = 0; i < star_num; i++) {
-		x = (window.innerWidth-5)*Math.random(),//(window.innerWidth-5)*Math.random()
+		x = (window.innerWidth-5)*Math.random(),
 		y = (window.innerHeight-5)*Math.random(),
-		x_s = Math.random()*1/2-0.2,//Math.random()*1/2-0.2
+		x_s = Math.random()*1/2-0.2,
 		y_s = Math.random()*1/2-0.2;
 		radius = Math.round(Math.random()*1)+0.5
 	
