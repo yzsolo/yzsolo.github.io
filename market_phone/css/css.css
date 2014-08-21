@@ -1,0 +1,253 @@
+body{
+	margin:0 auto;
+	overflow-y:hidden;
+	width:94%;
+	font:14px/1.4 "Microsoft Yahei", arial, sans-serif;
+}
+img{
+	width:100%;
+	height:auto;
+}
+a{
+	color:#000;
+	text-decoration:none;
+}
+header{
+	font-size: 3.4em;
+	line-height:1.5;
+	padding:0 2%;
+	letter-spacing:0.2em;
+	background-color:#eee;
+}
+.search{
+	margin-top:2em;
+}
+.search-form{
+	width:100%;
+}
+.search-box{
+	border:1px solid #eee;
+	border-radius:5px;
+	line-height:2em;
+	float:left;
+	width:100%;
+}
+.search-text{
+	width:85%;
+	margin-top:0.7%;
+	border-width:0px;
+	font-size:2em;
+	text-indent:1%;
+}
+.search-sub{
+	float:right;
+	width:12%;
+	height:3em;
+	cursor:pointer;
+	border:0px;
+	padding:0 1% 0 1%;
+	background: #eee url(../img/glass.png) no-repeat center;
+}
+.nav-ul{
+	width:100%;
+	margin:0 auto;
+	margin-top:2em;
+	padding-left:0.4%;
+	font-weight:normal;
+}
+.nav-ul li a{
+	display:block;
+	width:19.75%;
+	float:left;
+	height:2em;
+	line-height:2em;
+	text-align:center;
+	font-size:1.5em;
+	background-color:#eee;
+	text-decoration:none;
+	color:#000;	
+	border-right:0.0625em dashed #fff;
+	border-width:0.25%;
+}
+.nav-ul li a[name]{
+	border-bottom:0.0625em dashed #fff;
+}
+.nav-ul li:nth-child(5) a ,
+.nav-ul li:nth-child(10) a{
+	border-right:0px dashed #fff;
+}
+.things-list,.type-list{
+	margin-top:2em;
+}
+.things-list h3,.type-list h3{
+	font-size:1.5em;
+	text-align:left;
+	height:1.8em;
+	line-height:1.8em;
+	font-weight:normal;
+	background-color:#eee;
+	padding-left:1%;
+}
+.things-list ul,.type-list ul{
+	width:100%;
+	height:auto;
+}
+.type-list ul{
+	margin-top:1em;
+	background-color:#f8f8f8;
+}
+.things-list ul li{
+	width:46%;
+	margin:2%;
+	float:left;
+}
+.type-list ul li{
+	display:block;
+	width:100%;
+	float:left;
+
+	background-color:#f8f8f8;
+}
+.type-list ul li a{
+	display:block;
+	color:#000;
+}
+.list-img{
+	width:35%;
+	float:left;
+	padding:1em;
+	margin-right:5%;
+}
+.list-detail{
+	width:50%;
+	float:left;
+}
+.list-detail h3{
+	background-color:#f8f8f8;
+	padding-left:0%;
+	padding-top:0.4em;
+	font-size:1.8em;
+}
+.list-detail span{
+	display:block;
+	font-size:1.5em;
+	line-height:2em;
+}
+.list-price{
+	float:right;
+	margin-right:1em;
+}
+.things-name{
+	width:100%;
+	text-align:center;
+}
+.things-price{
+	float:right;
+	padding-right:5%;
+	padding-bottom:2%;
+}
+.items{
+	clear:both;
+}
+.load{
+	margin:0 auto;
+	width:96%;
+	font-size:1.5em;
+	text-align:center;
+	padding:2%;
+	margin-bottom:3%;
+	border-radius:5px;
+	background-color:#eee;
+}
+.detail-box{
+	/*background-color:#f8f8f8;*/
+}
+.detail-box h3{
+	font-size: 1.5em;
+	text-align: left;
+	height: 1.8em;
+	line-height: 1.8em;
+	font-weight: normal;
+	background-color: #eee;
+	padding-left: 1%;
+	margin-top:1em;
+}
+.detail-img{
+	padding:0.5em;
+}
+.detail-p{
+	font-size:2em;
+	padding:0.5em;
+}
+.detail-ul{
+	width:100%;
+}
+.detail-ul li{
+	width:94%;
+	line-height:2em;
+	margin:0 auto;
+}
+.detail-ul li span{
+	/*width:9%;
+	float:left;*/
+	margin-right:0.5em;
+}
+.detail-warning{
+	display:block;
+	width:94%;
+	line-height:2em;
+	margin:1em auto;
+}
+@media only screen and (min-width: 641px){
+	body{
+		width:594px;
+		padding:0 23px 32px;
+		margin:0 auto;
+	}
+} 
+
+@media only screen and (max-width: 520px){
+	body{
+		font-size: 13px;
+	}
+}
+
+@media only screen and (max-width: 420px){
+	body{
+		font-size: 12px;
+	}
+	.search-text{
+		margin-top:2%;
+	}
+	.list-detail h3{
+		font-size:1.7em;
+	}
+	.list-detail span{
+		line-height:1.9em;
+		font-size:1.4em;
+	}
+}
+
+@media only screen and (max-width: 340px){
+	body{
+		font-size: 11px;
+	}
+	.search-text{
+		width:80%;
+		font-size:1.5em;
+	}
+	.search-sub{
+		width:17%;
+		height:2.5em;
+	}
+	.nav-ul li a{
+		width:19.6%;
+	}
+	.list-detail h3{
+		font-size:1.7em;
+	}
+	.list-detail span{
+		line-height:1.8em;
+		font-size:1em;
+	}
+}
