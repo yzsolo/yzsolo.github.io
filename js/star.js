@@ -29,7 +29,7 @@ window.onload = function () {
 			x_f:x_f,
 			y_f:y_f,
 			radius:radius,
-			fillStyle:'#999'
+			fillStyle:'fff'
 		};
 		var copy_option = {
 			x_s:x_s,

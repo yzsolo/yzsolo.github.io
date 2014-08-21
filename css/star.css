@@ -23,11 +23,11 @@ canvas {
 	font-size: 14px;
 }
 a {
-	color:#999;
+	color:#fff;
 	text-decoration: none;
 }
 a:hover {
-	color:#cfcfcf;
+	color:#999;
 	text-decoration: none;
 }
 #who {
@@ -52,7 +52,7 @@ h1 {
 	font-weight: 600;
 	font-size: 30px;
 	text-indent: 7px;
-	color: #eee;
+	color: #fff;
 	padding: 0 10px;
 	letter-spacing: 8px;
 	text-transform: uppercase;
@@ -64,13 +64,13 @@ h1 {
 	font-size: 14px;
 	line-height: 2em;
 	text-align: center;
-	color: #999;
+	color: #fff;
 	margin: 0;
 	letter-spacing: 2px;
 }
 
 .intro{
-	color: #999;
+	color: #fff;
 	font-size: 15px;
 	text-align: center;
 	margin-bottom: 30px;
