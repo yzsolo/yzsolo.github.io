@@ -3,37 +3,48 @@
 <head>
 	<meta charset="UTF-8">
 	<title>circle_move</title>
+	<script src="http://cdn.staticfile.org/jquery/1.11.0/jquery.min.js"></script>
 	<style>
-	body {
-		background: #000;
-	}
+	/*one*/
 	.circle{
 		width:50px;
 		height:50px;
-		border:1px solid #fff;
+		border:1px solid #000;
 		position:absolute;
 		top:200px;
 		left:530px;
 		border-radius:25px;
-		background-color:#fff;
+		background-color:#000;
 	}
-	.box{
+	.back{
 		width:300px;
 		height:300px;
-		border:1px solid #fff;
+		border:1px solid #000;
 		border-radius:150px;
 		position:absolute;
 		top:75px;
 		left:255px;
 	}
+
+	/*two*/
+	#box{
+	    width: 50px;
+		height: 50px;
+		background-color: rgb(0,131,0);
+		border-radius: 25px;
+		margin: auto;
+		top: -29%;
+		right: 0;
+		bottom: 0;
+		left: -20%;
+		position: absolute;
+	}
 	</style>
 </head>
 <body>
-	<div class="circle"></div>
-	<div class="box"></div>
-	<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
 	<script>
 	$(function(){
+		//Part One : 小球转圈
 		var cir = $(".circle");
 		var top = cir.css('top');					  //#circle top值
 		var left1 = parseInt(cir.css('left')) - 150;  //确定一个原点
@@ -41,7 +52,7 @@
 		function move(r,top,left1){						
 			var f = 0;
 			var a = setInterval(function(){
-				if(f == r){
+				if(f==r){
 					f = 0;
 					move_core();
 				}else{
@@ -50,16 +61,47 @@
 			},10)
 
 			var move_core = function(){
-				var y = parseInt(top) - Math.sin(f * 2 * Math.PI/360) * 150;
-				var x = Math.cos(f * 2 * Math.PI / 360) * 150 + left1;
+				var y = parseInt(top) - Math.sin(f*2*Math.PI/360) * 150;
+				var x = Math.cos(f*2*Math.PI/360) * 150 + left1;
 				cir.css({'top':y,'left':x});
 				f++;	
 			}
+		}
+		move(360,top,left1);
 
+
+		//Part Two : changing size
+		var box = document.getElementById("box");
+		var animate_move = function(start,end,flag){
+		    var i = start, j = end;
+		    var a = setInterval(function(){
+
+		        if(i !== end) {
+		            box.style.width = i + "px";
+		            box.style.height = i + "px";
+		            box.style.borderRadius = i/2 + "px";
+		            flag > 0?i++:i--;
+		        }else{
+		            clearInterval(a);
+		            change_state(start,end,flag);
+		        }},10);
 		}
 
-		move(360,top,left1);
+		var change_state = function(start,end,f){
+		    f>0?f=0:f=1;
+		    var little_box = start;
+		    start = end;
+		    end = little_box;
+		    animate_move(start,end,f);
+		}
+		animate_move(50,150,1);
 		})
 	</script>
+	<!-- one -->
+	<div class="circle"></div>
+	<div class="back"></div>
+
+	<!-- two -->
+	<div id="box"></div>
 </body>
 </html>
