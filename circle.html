@@ -10,33 +10,52 @@
 		width:50px;
 		height:50px;
 		border:1px solid #000;
-		position:absolute;
-		top:200px;
-		left:530px;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
 		border-radius:25px;
 		background-color:#000;
 	}
 	.back{
-		width:300px;
-		height:300px;
+		width:400px;
+		height:400px;
 		border:1px solid #000;
-		border-radius:150px;
-		position:absolute;
-		top:75px;
-		left:255px;
+		border-radius:200px;
+		margin: auto;
+		top: 170px;
+		right: 0;
+		bottom: 0;
+		left: 530px;
+		position: absolute;
 	}
 
 	/*two*/
+	.box_box{
+		width: 200px;
+		height: 200px;
+		background-color: #eee;
+		border-radius: 100px;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		position: absolute;
+		z-index:-100;
+	}
 	#box{
 	    width: 50px;
 		height: 50px;
-		background-color: rgb(0,131,0);
+		background-color: #000;
 		border-radius: 25px;
 		margin: auto;
-		top: -29%;
+		top: 0;
 		right: 0;
 		bottom: 0;
-		left: -20%;
+		left: 0;
 		position: absolute;
 	}
 	</style>
@@ -45,9 +64,9 @@
 	<script>
 	$(function(){
 		//Part One : 小球转圈
-		var cir = $(".circle");
+		var cir = $(".circle,.back");
 		var top = cir.css('top');					  //#circle top值
-		var left1 = parseInt(cir.css('left')) - 150;  //确定一个原点
+		var left1 = parseInt(cir.css('left')) ;  //确定一个原点
 
 		function move(r,top,left1){						
 			var f = 0;
@@ -61,8 +80,8 @@
 			},10)
 
 			var move_core = function(){
-				var y = parseInt(top) - Math.sin(f*2*Math.PI/360) * 150;
-				var x = Math.cos(f*2*Math.PI/360) * 150 + left1;
+				var y = parseInt(top) - Math.sin(f*2*Math.PI/360) * 200;
+				var x = Math.cos(f*2*Math.PI/360) * 200 + left1;
 				cir.css({'top':y,'left':x});
 				f++;	
 			}
@@ -102,6 +121,7 @@
 	<div class="back"></div>
 
 	<!-- two -->
+	<div class="box_box"></div>
 	<div id="box"></div>
 </body>
 </html>
