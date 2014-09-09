@@ -3,6 +3,16 @@ body {
 	background:#022344;
 	overflow-y:hidden;
 }
+label {
+	right:0;
+	margin:15px;
+	color:#fff;
+	position: absolute;
+	z-index: 3001;
+}
+label span {
+	font-size: 13px;
+}
 .manu {
 	width:350px;
 	height:34px;

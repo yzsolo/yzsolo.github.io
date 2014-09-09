@@ -13,6 +13,18 @@ window.onload = function () {
 	var con = can.getContext('2d');
 	var x,y,x_s,y_s,x_f=1,y_f=1,stars = [],line_width=0.1,star_num=400;
 
+	//checkbox
+	$('#input').click(function() {
+		if( this.checked == true ) {
+			$('#box').html('');
+			console.log('true');
+		}else if ( this.checked == false ) {
+			$('#box').html('<img src="img/back1.png" alt="">');
+			console.log('false');
+		}
+		// console.log($(this).val());
+	});
+
 	for (var i = 0; i < star_num; i++) {
 		x = (window.innerWidth-5)*Math.random(),
 		y = (window.innerHeight-5)*Math.random(),
