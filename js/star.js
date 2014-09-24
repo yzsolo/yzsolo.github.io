@@ -14,6 +14,10 @@ window.onload = function () {
 	var x,y,x_s,y_s,x_f=1,y_f=1,stars = [],line_width=0.1,star_num=400;
 
 	//checkbox
+
+
+
+
 	$('#input').click(function() {
 		if( this.checked == true ) {
 			$('#box').html('');
