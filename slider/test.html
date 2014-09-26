@@ -7,19 +7,48 @@
 	<script src="lib/zepto.js"></script>
 	<script src="src/slider.js"></script>
 	<style>
-	
+		.img_box {
+			position: absolute;
+			white-space: nowrap;
+			left: 0px;
+			font-size:0;
+		}
+		.img{
+			position:relative;
+			display:inline-block;
+			margin: 5px;
+			
+		}
+		.img img {
+			width: 100%;
+		}
 	</style>
 </head>
 <body style="width:100%;overflow:hidden;">
-	<!-- <div class="slider"> -->
-		<ul id="slider">
-		
-		</ul>
-	<!-- </div> -->
 	
+	<div class="img_box">
+		<div name='one' class="img">
+			<img src="img/group1.png" alt="">
+		</div>
+		<div name='one' class="img">
+			<img src="img/group1.png" alt="">
+		</div>
+		<div name='one' class="img">
+			<img src="img/group1.png" alt="">
+		</div>
+		<div name='one' class="img">
+			<img src="img/group1.png" alt="">
+		</div>
+		<div name='one' class="img">
+			<img src="img/group1.png" alt="">
+		</div>
+		<div name='one' class="img">
+			<img src="img/group1.png" alt="">
+		</div>
+	</div>
 	<script>
 	window.onload = function () {
-		$('.box').slider();
+		$('.img_box').slider();
 	}
 	</script>
 </body>
