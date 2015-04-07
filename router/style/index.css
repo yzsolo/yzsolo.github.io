@@ -8,6 +8,7 @@ body {
 	position: absolute;
 	display:none;
 	z-index: -2;
+	opacity: 0;
 	background-color: #333;
 }
 #side_menu {

@@ -13,14 +13,24 @@ $("#shade").on('click', function() {
 function side_change (i, menu, flag) {
 	$("#index-span").find('i').animate({'left': i}, 250, 'ease');
 	$("#side_menu").animate({'left': menu}, 250, 'ease');
-	
+
 	if (flag) {
-		$("#shade").css('display', 'block').animate({'opacity': '0.5'}, 250);
+
+		$("#shade").css({'display': 'block'}).animate({'opacity': '0.5'}, 250);
+
 	} else {
+
+		/*关于链式操作的思考*/
+		//方式1:
+		// $("#shade").animate({'opacity': '0'}, 250).css('display', 'none');
+
+		//方式2:
 		$("#shade").animate({'opacity': '0'}, 250);
+		
 		setTimeout(function(){
 			$("#shade").css('display', 'none');
 		},200);
+		
 		
 	}
 }
