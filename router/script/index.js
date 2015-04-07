@@ -11,12 +11,12 @@ $("#shade").on('click', function() {
 })
 
 function side_change (i, menu, flag) {
-	$("#index-span").find('i').animate({'left': i}, 250, 'ease');
-	$("#side_menu").animate({'left': menu}, 250, 'ease');
+	$("#index-span").find('i').animate({'left': i}, 250, 'ease-inout');
+	$("#side_menu").animate({'left': menu}, 250, 'ease-inout');
 
 	if (flag) {
 
-		$("#shade").css({'display': 'block'}).animate({'opacity': '0.6'}, 250);
+		$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, 250);
 
 	} else {
 
