@@ -16,7 +16,7 @@ function side_change (i, menu, flag) {
 
 	if (flag) {
 
-		$("#shade").css({'display': 'block'}).animate({'opacity': '0.5'}, 250);
+		$("#shade").css({'display': 'block'}).animate({'opacity': '0.6'}, 250);
 
 	} else {
 
@@ -26,7 +26,7 @@ function side_change (i, menu, flag) {
 
 		//方式2:
 		$("#shade").animate({'opacity': '0'}, 250);
-		
+
 		setTimeout(function(){
 			$("#shade").css('display', 'none');
 		},200);
