@@ -11,11 +11,11 @@ window.onload = function () {
 	can.width = window.innerWidth;
 	can.height = window.innerHeight;
 	var con = can.getContext('2d');
-	var x,y,x_s,y_s,x_f=1,y_f=1,stars = [],line_width=0.1,star_num=30;
+	var x,y,x_s,y_s,x_f=1,y_f=1,stars = [],line_width=0.1,star_num=50;
 
 	for (var i = 0; i < star_num; i++) {
-		x = (window.innerWidth-5)*Math.random(),
-		y = (window.innerHeight-5)*Math.random(),
+		x = (window.innerWidth-5)/4*Math.random()+window.innerWidth*3/8,
+		y = (window.innerHeight-5)/4*Math.random()+window.innerHeight*3/8,
 		x_s = (Math.random()>0.5?1:-1)*Math.random()*1/3,
 		y_s = (Math.random()>0.5?1:-1)*Math.random()*1/3;
 		radius = Math.round(Math.random()*2)+1.5
