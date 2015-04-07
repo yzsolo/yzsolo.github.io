@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Aresy.z</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+		body {
+			background:#000;
+			overflow-y:hidden;
+		}
+		canvas {
+			display:none;
+		}
+	</style>
+</head>
+<body>
+	<canvas id='yz_canvas' style='z-index:-10000;position:fixed;'></canvas>
+	<script src='js/yz_star.js' name='js_selected'></script>
+	<script src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+	<script>
+		$(function() {
+			$('canvas').fadeIn(4000, function() {
+				$(this).css('display', 'block');
+				h1();
+			})
+		})
+	</script>
+</body>
+</html>
