@@ -1,5 +1,7 @@
 body {
+	position:relative;
 	background: #ddd;
+	z-index: -10;
 }
 #shade {
 	width: 100%;
@@ -36,10 +38,12 @@ body {
 	padding-right:10px;
 }
 #index {
+	position: relative;
 	width: 100%;
 	height: 100%;
+	z-index: -4;
 }
-#index header {
+header {
 	  position: relative;
 	  z-index: 0;
 	  height: 50px;
@@ -49,14 +53,14 @@ body {
 	  color: #fff;
 	  background-color: #11A0EA;
 }
-#index header span {
+header span {
 	float: left;
 	width: 62px;
 	text-align: right;
 }
-#index header span i {
+header span i {
 	position: absolute;
-	line-height: 50px;
+	top: 14px;
 	left: -3px;
 }
 #index section {
