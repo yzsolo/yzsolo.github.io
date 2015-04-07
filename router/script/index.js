@@ -1,7 +1,7 @@
 $("#index-span").on('click', function() {
 
-	$(this).find('i').css('left') === '-2px'?
-	side_change('-8px', '0px'):side_change('-2px', '-250px');
+	$(this).find('i').css('left') === '-3px'?
+	side_change('-8px', '0px'):side_change('-3px', '-200px');
 	
 })
 

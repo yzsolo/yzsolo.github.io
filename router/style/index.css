@@ -12,8 +12,8 @@ body {
 #side_menu {
 	  position: absolute;
 	  z-index: -1;
-	  left: -250px;
-	  width: 250px;
+	  left: -200px;
+	  width: 200px;
 	  height: 100%;
 	  font-size: 1.2em;
 	  background-color:#fff;
@@ -57,7 +57,7 @@ body {
 #index header span i {
 	position: absolute;
 	line-height: 50px;
-	left: -2px;
+	left: -3px;
 }
 #index section {
 	position: relative;
