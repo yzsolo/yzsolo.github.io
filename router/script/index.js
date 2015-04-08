@@ -44,18 +44,20 @@ var event_bind = {
 
 			if ( side_flag == 1 ) {
 				var point = e.touches[0];
+
 				if(point.pageX < 200) {
 					var left = point.pageX - 200;
 					$('#side_menu').css({'left': left + 'px'});
 					$("#shade").css({'display': 'block', 'opacity': (200-left*(-1))/200*0.7});
 					$("#index-span").find('i').css({'left': -(200-left*(-1))/200*6-3 + "px"})
 				}
+
 			}
 
 		},
 
 		menu_change : function() {
-			console.log($("#index-span").find('i').css('left'));
+
 			$("#index-span").find('i').css('left') === '-3px'?
 			event_bind.side_change('-9px', '0px', true):event_bind.side_change('-3px', '-200px', false);
 
@@ -88,8 +90,6 @@ var event_bind = {
 				$("#shade").css({'display': 'block', 'opacity': (200-left*(-1))/200*0.7});
 				$("#index-span").find('i').css({'left': -(200-left*(-1))/200*6-3 + "px"})
 
-				old_x = point.pageX;
-
 			}
 
 		},
@@ -114,12 +114,11 @@ var event_bind = {
 
 	side_change : function(i, menu, flag) {
 
-		console.log('hu');
 		$("#index-span").find('i').animate({'left': i}, 250, 'ease-inout');
 		$("#side_menu").animate({'left': menu}, 250, 'ease-inout');
-		console.log(flag);
+
 		if (flag) {
-			console.log('nn');
+
 			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, 250);
 			// var json = {time: new Date().getTime()};
 			// window.history.pushState(json, '', "http://aresyz.com/router#menu");
