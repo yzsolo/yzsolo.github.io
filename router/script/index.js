@@ -51,11 +51,15 @@ var event_bind = {
 
 			if ( event_bind.touch_flag == 1 ) {
 				var point = e.touches[0];
-				var dis = point.pageX - event_bind.start_X;
 
-				var left = $('#side_menu').css('left').slice(0, -2) - 0 + dis;
+				var dis = point.pageX - event_bind.start_X;
+				var left = -200;
+				left = left + dis;
+
 				left>0?left=0:left=left;
 				$('#side_menu').css('left',left);
+
+				old_x = point.pageX;
 
 			}
 			
