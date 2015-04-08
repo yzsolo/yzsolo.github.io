@@ -8,7 +8,8 @@ var event_bind = {
 		'#index-span click': 'menu_change',
 		'#shade click': 'menu_change',
 		'html touchstart': 'touchstart',
-		'html touchmove': 'touchmove'
+		'html touchmove': 'touchmove',
+		'html touchend': 'touchend'
 	},
 
 	eve_bind : function() {
@@ -62,8 +63,19 @@ var event_bind = {
 				old_x = point.pageX;
 
 			}
-			
-			console.log(point.pageX + ' + ' + point.pageY);
+
+		},
+
+		touchend : function(e) {
+			console.log('d');
+			var left = $('#side_menu').css('left').slice(0, -2) - 0;
+			console.log(left);
+			if ( left < -100 ) {
+				console.log('<');
+				$('#side_menu').animate({'left': '-200px'}, 150, 'ease-inout');
+			} else {
+				$('#side_menu').animate({'left': '0px'}, 150, 'ease-inout');
+			}
 		}
 	},
 
