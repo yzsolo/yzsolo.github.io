@@ -9,7 +9,10 @@ var event_bind = {
 		'#shade click': 'menu_change',
 		'#index>section touchstart': 'touchstart',
 		'#index>section touchmove': 'touchmove',
-		'#index>section touchend': 'touchend'
+		'#index>section touchend': 'touchend',
+		'#shade touchstart': 'side_touchstart',
+		'#shade touchmove': 'side_touchmove',
+		'#shade touchend': 'touchend'
 	},
 
 	eve_bind : function() {
@@ -27,6 +30,29 @@ var event_bind = {
 	},
 
 	eve_detail : {
+		side_touchstart : function(e) {
+			var left = $('#side_menu').css('left');
+
+			if ( left == '0px' ) {
+				side_flag = 1;
+			} else {
+				side_flag = 0;
+			}
+		},
+
+		side_touchmove : function(e) {
+
+			if ( side_flag == 1 ) {
+				var point = e.touches[0];
+				if(point.pageX < 200) {
+					var left = point.pageX - 200;
+					$('#side_menu').css({'left': left + 'px'});
+					$("#shade").css({'display': 'block', 'opacity': (200-left*(-1))/200*0.7});
+					$("#index-span").find('i').css({'left': -(200-left*(-1))/200*6-3 + "px"})
+				}
+			}
+
+		},
 
 		menu_change : function() {
 			console.log($("#index-span").find('i').css('left'));
@@ -39,7 +65,7 @@ var event_bind = {
 
 			var point = e.touches[0];
 
-			if(point.pageX < 10 ) {
+			if(point.pageX < 20 ) {
 				event_bind.touch_flag = 1;
 				event_bind.start_X = point.pageX;
 			} else {
