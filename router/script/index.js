@@ -35,7 +35,11 @@ var event_bind = {
 		$("#side_menu").animate({'left': menu}, 250, 'ease-inout');
 
 		if (flag) {
+
 			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, 250);
+			var json = {time: new Date().getTime()};
+			window.history.pushState(json, '', "http://aresyz.com/router/menu");
+
 		} else {
 
 			//方式1:
@@ -47,6 +51,9 @@ var event_bind = {
 			setTimeout(function(){
 				$("#shade").css('display', 'none');
 			},200);
+
+			var json = {time: new Date().getTime()};
+			window.history.pushState(json, '', "http://aresyz.com/router");
 
 		}
 	}
