@@ -7,9 +7,9 @@ var event_bind = {
 	eve_describe : {
 		'#index-span click': 'menu_change',
 		'#shade click': 'menu_change',
-		'html touchstart': 'touchstart',
-		'html touchmove': 'touchmove',
-		'html touchend': 'touchend'
+		'#index>section touchstart': 'touchstart',
+		'#index>section touchmove': 'touchmove',
+		'#index>section touchend': 'touchend'
 	},
 
 	eve_bind : function() {
@@ -29,7 +29,7 @@ var event_bind = {
 	eve_detail : {
 
 		menu_change : function() {
-
+			console.log($("#index-span").find('i').css('left'));
 			$("#index-span").find('i').css('left') === '-3px'?
 			event_bind.side_change('-9px', '0px', true):event_bind.side_change('-3px', '-200px', false);
 
@@ -59,6 +59,8 @@ var event_bind = {
 
 				left>0?left=0:left=left;
 				$('#side_menu').css('left',left);
+				$("#shade").css({'display': 'block', 'opacity': (200-left*(-1))/200*0.7});
+				$("#index-span").find('i').css({'left': -(200-left*(-1))/200*6-3 + "px"})
 
 				old_x = point.pageX;
 
@@ -67,25 +69,31 @@ var event_bind = {
 		},
 
 		touchend : function(e) {
-			console.log('d');
 			var left = $('#side_menu').css('left').slice(0, -2) - 0;
-			console.log(left);
+
 			if ( left < -100 ) {
-				console.log('<');
 				$('#side_menu').animate({'left': '-200px'}, 150, 'ease-inout');
+				$("#index-span").find('i').animate({'left': '-9px'}, 250, 'ease-inout');
+				$("#shade").animate({'opacity': '0'}, 250);
+				setTimeout(function(){
+				$("#shade").css('display', 'none');
+			},200);
 			} else {
 				$('#side_menu').animate({'left': '0px'}, 150, 'ease-inout');
+				$("#index-span").find('i').animate({'left': '-3px'}, 250, 'ease-inout');
+				$("#shade").animate({'opacity': '0.7'}, 250);
 			}
 		}
 	},
 
 	side_change : function(i, menu, flag) {
 
+		console.log('hu');
 		$("#index-span").find('i').animate({'left': i}, 250, 'ease-inout');
 		$("#side_menu").animate({'left': menu}, 250, 'ease-inout');
-
+		console.log(flag);
 		if (flag) {
-
+			console.log('nn');
 			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, 250);
 			// var json = {time: new Date().getTime()};
 			// window.history.pushState(json, '', "http://aresyz.com/router#menu");
