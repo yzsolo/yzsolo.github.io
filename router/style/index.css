@@ -41,7 +41,7 @@ body {
 	position: relative;
 	width: 100%;
 	height: 100%;
-	z-index: -4;
+	z-index: -3;
 }
 header {
 	  position: relative;
@@ -65,7 +65,7 @@ header span i {
 }
 #index section {
 	 position: relative;
-	 z-index: -3;
+	 z-index: -4;
 	 padding: 10px 10px;
 	 border-bottom: 1px solid #ddd;
 	 background-color: #fff;
