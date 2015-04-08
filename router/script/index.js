@@ -38,7 +38,7 @@ var event_bind = {
 
 			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, 250);
 			var json = {time: new Date().getTime()};
-			window.history.pushState(json, '', "http://aresyz.com/router/menu");
+			window.history.pushState(json, '', "http://aresyz.com/router#menu");
 
 		} else {
 
@@ -53,7 +53,7 @@ var event_bind = {
 			},200);
 
 			var json = {time: new Date().getTime()};
-			window.history.pushState(json, '', "http://aresyz.com/router");
+			window.history.pushState(json, '', "http://aresyz.com/router#index");
 
 		}
 	}
