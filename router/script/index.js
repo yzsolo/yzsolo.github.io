@@ -73,14 +73,14 @@ var event_bind = {
 
 			if ( left < -100 ) {
 				$('#side_menu').animate({'left': '-200px'}, 150, 'ease-inout');
-				$("#index-span").find('i').animate({'left': '-9px'}, 250, 'ease-inout');
+				$("#index-span").find('i').animate({'left': '-3px'}, 250, 'ease-inout');
 				$("#shade").animate({'opacity': '0'}, 250);
 				setTimeout(function(){
 				$("#shade").css('display', 'none');
 			},200);
 			} else {
 				$('#side_menu').animate({'left': '0px'}, 150, 'ease-inout');
-				$("#index-span").find('i').animate({'left': '-3px'}, 250, 'ease-inout');
+				$("#index-span").find('i').animate({'left': '-9px'}, 250, 'ease-inout');
 				$("#shade").animate({'opacity': '0.7'}, 250);
 			}
 		}
