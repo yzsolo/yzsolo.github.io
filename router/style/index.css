@@ -64,7 +64,7 @@ header a {
 	width: 62px;
 	text-align: right;
 }
-header span i {
+header a i {
 	position: absolute;
 	top: 14px;
 	left: -3px;
