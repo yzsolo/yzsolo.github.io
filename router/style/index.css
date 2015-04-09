@@ -59,7 +59,7 @@ header {
 	  color: #fff;
 	  background-color: #11A0EA;
 }
-header span {
+header a {
 	float: left;
 	width: 62px;
 	text-align: right;
