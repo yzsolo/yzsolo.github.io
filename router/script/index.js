@@ -46,7 +46,6 @@ var event_bind = {
 				side_flag = 0;
 			}
 			console.log('shade_touchstart');
-			stopBubble(e);
 		},
 
 		shade_touchmove : function(e) {
@@ -67,7 +66,7 @@ var event_bind = {
 		},
 
 		shade_touchend : function(e) {
-			// console.log('shade_touchend');
+			console.log('shade_touchend');
 			var left = event_bind.get_left('#side_menu');
 
 			if ( left < -100 ) {
@@ -79,13 +78,13 @@ var event_bind = {
 				event_bind.side_change('-9px', '0px', true);
 
 			}
-			stopBubble(e);
 			
 		},
 
 		menu_change : function(e) {
 			var left = event_bind.get_left("#side_menu");
 			console.log('click');
+
 			if( left === -200 || left === 0) {
 				left === -200?
 				event_bind.side_change('-9px', '0px', true):event_bind.side_change('-3px', '-200px', false);
@@ -93,7 +92,6 @@ var event_bind = {
 				return null;
 			}
 			
-			// stopBubble(e);
 
 		},
 
@@ -111,7 +109,6 @@ var event_bind = {
 				event_bind.touch_flag = 0;
 
 			}
-			stopBubble(e);
 		},
 
 		index_touchmove : function(e) {
@@ -145,7 +142,6 @@ var event_bind = {
 				event_bind.side_change('-9px', '0px', true);
 
 			}
-			stopBubble(e);
 			
 		}
 	},
@@ -163,7 +159,7 @@ var event_bind = {
 	},
 
 	side_change : function(i, menu, flag, speed) {
-		var speed = speed?speed:300;
+		var speed = 500;
 		console.log(speed);
 
 		$("#index-span").find('i').animate({'left': i}, speed, 'ease-inout');
@@ -171,21 +167,18 @@ var event_bind = {
 
 		if (flag) {
 
-			$("#shade").css({'display': 'block'}).fadeTo(speed, '0.7');
+			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, speed, 'ease-inout');
 
 		} else {
 
-			$("#shade").fadeOut(speed);
+			$("#shade").animate({'opacity': '0'}, speed, 'ease-inout');
+			setTimeout(function() {
+				$("#shade").css({'display': 'none'});
+			}, speed);
 
 		}
 
 	}
 }
-function stopBubble(event) {  
-            if (event && event.stopPropagation) {  
-                event.stopPropagation();  
-            } else {  
-                window.event.cancelBubble = true;  
-            }  
-        }  
+
 event_bind.eve_bind();
