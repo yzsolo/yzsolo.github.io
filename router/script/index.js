@@ -12,14 +12,14 @@ var event_bind = {
 		'#shade click': 'menu_change',
 
 		//针对menu的手势滑动操作
-		'#index touchstart': 'touchstart',
-		'#index touchmove': 'touchmove',
-		'#index touchend': 'touchend',
+		'#index touchstart': 'index_touchstart',
+		'#index touchmove': 'index_touchmove',
+		'#index touchend': 'index_touchend',
 
 		//shade出现后，针对menu的手势滑动操作
-		'#shade touchstart': 'side_touchstart',
-		'#shade touchmove': 'side_touchmove',
-		'#shade touchend': 'touchend'
+		'#shade touchstart': 'shade_touchstart',
+		'#shade touchmove': 'shade_touchmove',
+		'#shade touchend': 'shade_touchend'
 	},
 
 	eve_bind : function() {
@@ -37,7 +37,7 @@ var event_bind = {
 	},
 
 	eve_detail : {
-		side_touchstart : function(e) {
+		shade_touchstart : function(e) {
 			var left = event_bind.get_left('#side_menu');
 
 			if ( left == 0 ) {
@@ -45,9 +45,12 @@ var event_bind = {
 			} else {
 				side_flag = 0;
 			}
+			// console.log('shade_touchstart');
+			stopBubble(e);
 		},
 
-		side_touchmove : function(e) {
+		shade_touchmove : function(e) {
+			// console.log('shade_touchmove');
 
 			if ( side_flag == 1 ) {
 				var point = e.touches[0];
@@ -63,15 +66,34 @@ var event_bind = {
 
 		},
 
+		shade_touchend : function(e) {
+			// console.log('shade_touchend');
+			var left = event_bind.get_left('#side_menu');
+
+			if ( left < -100 ) {
+				// console.log('-100');
+				event_bind.side_change('-3px', '-200px', false, 100);
+
+			} else {
+
+				event_bind.side_change('-9px', '0px', true, 100);
+
+			}
+			stopBubble(e);
+			
+		},
+
 		menu_change : function(e) {
+			// console.log('click');
 
 			$("#index-span").find('i').css('left') === '-3px'?
 			event_bind.side_change('-9px', '0px', true):event_bind.side_change('-3px', '-200px', false);
+			stopBubble(e);
 
 		},
 
-		touchstart : function(e) {
-
+		index_touchstart : function(e) {
+			// console.log('index_touchstart');
 			var point = e.touches[0];
 
 			if(point.pageX < 20 ) {
@@ -84,11 +106,11 @@ var event_bind = {
 				event_bind.touch_flag = 0;
 
 			}
-			console.log('d');
+			stopBubble(e);
 		},
 
-		touchmove : function(e) {
-
+		index_touchmove : function(e) {
+			// console.log('index_touchmove');
 			if ( event_bind.touch_flag == 1 ) {
 				var point = e.touches[0];
 
@@ -105,19 +127,20 @@ var event_bind = {
 
 		},
 
-		touchend : function(e) {
-
+		index_touchend : function(e) {
+			// console.log('index_touchend');
 			var left = event_bind.get_left('#side_menu');
 
 			if ( left < -100 ) {
-
-				event_bind.side_change('-3px', '-200px', false, 100);
+				
+				event_bind.side_change('-3px', '-200px', false);
 
 			} else {
 
-				event_bind.side_change('-9px', '0px', true, 100);
+				event_bind.side_change('-9px', '0px', true);
 
 			}
+			stopBubble(e);
 			
 		}
 	},
@@ -136,7 +159,7 @@ var event_bind = {
 
 	side_change : function(i, menu, flag, speed) {
 		var speed = speed?speed:250;
-		console.log(speed);
+		// console.log(speed);
 
 		$("#index-span").find('i').animate({'left': i}, speed, 'ease-inout');
 		$("#side_menu").animate({'left': menu}, speed, 'ease-inout');
@@ -153,5 +176,11 @@ var event_bind = {
 
 	}
 }
-
+function stopBubble(event) {  
+            if (event && event.stopPropagation) {  
+                event.stopPropagation();  
+            } else {  
+                window.event.cancelBubble = true;  
+            }  
+        }  
 event_bind.eve_bind();
