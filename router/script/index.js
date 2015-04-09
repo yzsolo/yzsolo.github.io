@@ -200,7 +200,7 @@ window.onhashChange = function() {
 
  		if(event_bind.get_left('#index-span') != -9) {
  			$("#index-span").trigger('click');
- 			$("#index-span").attr('href'， '#index');
+ 			$("#index-span").attr('href', '#index');
  		}
 
  	} else if ( window.location.hash == '#index' ) {
