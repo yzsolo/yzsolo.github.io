@@ -11,6 +11,12 @@ body {
 	opacity: 0;
 	background-color: #333;
 }
+#box {
+	width:200px;
+	height:100%;
+	position:absolute;
+	z-index: 2;
+}
 #side_menu {
 	  position: absolute;
 	  z-index: -1;

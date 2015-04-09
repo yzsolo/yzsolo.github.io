@@ -12,9 +12,9 @@ var event_bind = {
 		'#shade click': 'menu_change',
 
 		//针对menu的手势滑动操作
-		'#index touchstart': 'index_touchstart',
-		'#index touchmove': 'index_touchmove',
-		'#index touchend': 'index_touchend',
+		'#box touchstart': 'index_touchstart',
+		'#box touchmove': 'index_touchmove',
+		'#box touchend': 'index_touchend',
 
 		//shade出现后，针对menu的手势滑动操作
 		'#shade touchstart': 'shade_touchstart',
