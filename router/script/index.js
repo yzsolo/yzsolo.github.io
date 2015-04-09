@@ -5,11 +5,18 @@ var event_bind = {
 	start_X : 0,
 
 	eve_describe : {
+		//顶部按钮操作
 		'#index-span click': 'menu_change',
+
+		//阴影遮罩点击操作
 		'#shade click': 'menu_change',
-		'#index>section touchstart': 'touchstart',
-		'#index>section touchmove': 'touchmove',
-		'#index>section touchend': 'touchend',
+
+		//针对menu的手势滑动操作
+		'#index touchstart': 'touchstart',
+		'#index touchmove': 'touchmove',
+		'#index touchend': 'touchend',
+
+		//针对menu的手势滑动操作
 		'#shade touchstart': 'side_touchstart',
 		'#shade touchmove': 'side_touchmove',
 		'#shade touchend': 'touchend'
@@ -31,9 +38,9 @@ var event_bind = {
 
 	eve_detail : {
 		side_touchstart : function(e) {
-			var left = $('#side_menu').css('left');
+			var left = event_bind.get_left('#side_menu');
 
-			if ( left == '0px' ) {
+			if ( left == 0 ) {
 				side_flag = 1;
 			} else {
 				side_flag = 0;
@@ -46,17 +53,17 @@ var event_bind = {
 				var point = e.touches[0];
 
 				if(point.pageX < 200) {
+
 					var left = point.pageX - 200;
-					$('#side_menu').css({'left': left + 'px'});
-					$("#shade").css({'display': 'block', 'opacity': (200-left*(-1))/200*0.7});
-					$("#index-span").find('i').css({'left': -(200-left*(-1))/200*6-3 + "px"})
+					event_bind.side_change_process(left);
+
 				}
 
 			}
 
 		},
 
-		menu_change : function() {
+		menu_change : function(e) {
 
 			$("#index-span").find('i').css('left') === '-3px'?
 			event_bind.side_change('-9px', '0px', true):event_bind.side_change('-3px', '-200px', false);
@@ -68,12 +75,16 @@ var event_bind = {
 			var point = e.touches[0];
 
 			if(point.pageX < 20 ) {
+
 				event_bind.touch_flag = 1;
 				event_bind.start_X = point.pageX;
-			} else {
-				event_bind.touch_flag = 0;
-			}
 
+			} else {
+
+				event_bind.touch_flag = 0;
+
+			}
+			console.log('d');
 		},
 
 		touchmove : function(e) {
@@ -81,64 +92,63 @@ var event_bind = {
 			if ( event_bind.touch_flag == 1 ) {
 				var point = e.touches[0];
 
+
 				var dis = point.pageX - event_bind.start_X;
 				var left = -200;
 				left = left + dis;
 
 				left>0?left=0:left=left;
-				$('#side_menu').css('left',left);
-				$("#shade").css({'display': 'block', 'opacity': (200-left*(-1))/200*0.7});
-				$("#index-span").find('i').css({'left': -(200-left*(-1))/200*6-3 + "px"})
+
+				event_bind.side_change_process(left);
 
 			}
 
 		},
 
 		touchend : function(e) {
-			var left = $('#side_menu').css('left').slice(0, -2) - 0;
+
+			var left = event_bind.get_left('#side_menu');
 
 			if ( left < -100 ) {
-				$('#side_menu').animate({'left': '-200px'}, 150, 'ease-inout');
-				$("#index-span").find('i').animate({'left': '-3px'}, 250, 'ease-inout');
-				$("#shade").animate({'opacity': '0'}, 250);
-				setTimeout(function(){
-				$("#shade").css('display', 'none');
-			},200);
+
+				event_bind.side_change('-3px', '-200px', false);
+
 			} else {
-				$('#side_menu').animate({'left': '0px'}, 150, 'ease-inout');
-				$("#index-span").find('i').animate({'left': '-9px'}, 250, 'ease-inout');
-				$("#shade").animate({'opacity': '0.7'}, 250);
+
+				event_bind.side_change('-9px', '0px', true);
+
 			}
+			
 		}
 	},
 
-	side_change : function(i, menu, flag) {
+	get_left : function(el) {
+		return $(el).css('left').slice(0, -2) - 0;
+	},
 
+	side_change_process : function(left) {
+
+		$('#side_menu').css('left',left);
+		$("#shade").css({'display': 'block', 'opacity': (200-left*(-1))/200*0.7});
+		$("#index-span").find('i').css({'left': -(200-left*(-1))/200*6-3 + "px"})
+
+	},
+
+	side_change : function(i, menu, flag) {
+		
 		$("#index-span").find('i').animate({'left': i}, 250, 'ease-inout');
 		$("#side_menu").animate({'left': menu}, 250, 'ease-inout');
 
 		if (flag) {
 
-			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, 250);
-			// var json = {time: new Date().getTime()};
-			// window.history.pushState(json, '', "http://aresyz.com/router#menu");
+			$("#shade").css({'display': 'block'}).fadeTo(250, '0.7');
 
 		} else {
 
-			//方式1:
-			// $("#shade").animate({'opacity': '0'}, 250).css('display', 'none');
-
-			//方式2:
-			$("#shade").animate({'opacity': '0'}, 250);
-
-			setTimeout(function(){
-				$("#shade").css('display', 'none');
-			},200);
-
-			// var json = {time: new Date().getTime()};
-			// window.history.pushState(json, '', "http://aresyz.com/router#index");
+			$("#shade").fadeOut(250);
 
 		}
+
 	}
 }
 
