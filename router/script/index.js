@@ -45,12 +45,12 @@ var event_bind = {
 			} else {
 				side_flag = 0;
 			}
-			// console.log('shade_touchstart');
+			console.log('shade_touchstart');
 			stopBubble(e);
 		},
 
 		shade_touchmove : function(e) {
-			// console.log('shade_touchmove');
+			console.log('shade_touchmove');
 
 			if ( side_flag == 1 ) {
 				var point = e.touches[0];
@@ -93,7 +93,7 @@ var event_bind = {
 		},
 
 		index_touchstart : function(e) {
-			// console.log('index_touchstart');
+			console.log('index_touchstart');
 			var point = e.touches[0];
 
 			if(point.pageX < 20 ) {
@@ -110,7 +110,7 @@ var event_bind = {
 		},
 
 		index_touchmove : function(e) {
-			// console.log('index_touchmove');
+			console.log('index_touchmove');
 			if ( event_bind.touch_flag == 1 ) {
 				var point = e.touches[0];
 
