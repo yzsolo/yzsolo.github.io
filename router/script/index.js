@@ -1,3 +1,7 @@
+
+FastClick.attach(document.body);
+
+
 var event_bind = {
 
 	touch_flag : 0,
