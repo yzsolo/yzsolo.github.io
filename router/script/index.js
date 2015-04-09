@@ -162,7 +162,7 @@ var event_bind = {
 	},
 
 	side_change : function(i, menu, flag, speed) {
-		var speed = speed?speed:250;
+		var speed = speed?speed:500;
 		// console.log(speed);
 
 		$("#index-span").find('i').animate({'left': i}, speed, 'ease-inout');
