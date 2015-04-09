@@ -16,7 +16,7 @@ var event_bind = {
 		'#index touchmove': 'touchmove',
 		'#index touchend': 'touchend',
 
-		//针对menu的手势滑动操作
+		//shade出现后，针对menu的手势滑动操作
 		'#shade touchstart': 'side_touchstart',
 		'#shade touchmove': 'side_touchmove',
 		'#shade touchend': 'touchend'
@@ -111,11 +111,11 @@ var event_bind = {
 
 			if ( left < -100 ) {
 
-				event_bind.side_change('-3px', '-200px', false);
+				event_bind.side_change('-3px', '-200px', false, 100);
 
 			} else {
 
-				event_bind.side_change('-9px', '0px', true);
+				event_bind.side_change('-9px', '0px', true, 100);
 
 			}
 			
@@ -134,18 +134,20 @@ var event_bind = {
 
 	},
 
-	side_change : function(i, menu, flag) {
-		
-		$("#index-span").find('i').animate({'left': i}, 250, 'ease-inout');
-		$("#side_menu").animate({'left': menu}, 250, 'ease-inout');
+	side_change : function(i, menu, flag, speed) {
+		var speed = speed?speed:250;
+		console.log(speed);
+
+		$("#index-span").find('i').animate({'left': i}, speed, 'ease-inout');
+		$("#side_menu").animate({'left': menu}, speed, 'ease-inout');
 
 		if (flag) {
 
-			$("#shade").css({'display': 'block'}).fadeTo(250, '0.7');
+			$("#shade").css({'display': 'block'}).fadeTo(speed, '0.7');
 
 		} else {
 
-			$("#shade").fadeOut(250);
+			$("#shade").fadeOut(speed);
 
 		}
 
