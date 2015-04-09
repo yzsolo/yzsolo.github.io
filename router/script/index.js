@@ -71,7 +71,7 @@ var event_bind = {
 			var left = event_bind.get_left('#side_menu');
 
 			if ( left < -100 ) {
-				// console.log('-100');
+
 				event_bind.side_change('-3px', '-200px', false);
 
 			} else {
@@ -84,20 +84,22 @@ var event_bind = {
 
 		menu_change : function(e) {
 			var left = event_bind.get_left("#side_menu");
-			console.log('click');
 
 			if( left === -200 || left === 0) {
+
 				left === -200?
 				event_bind.side_change('-9px', '0px', true):event_bind.side_change('-3px', '-200px', false);
+
 			} else {
+
 				return null;
+
 			}
 			
 
 		},
 
 		index_touchstart : function(e) {
-			console.log('index_touchstart');
 			var point = e.touches[0];
 
 			if(point.pageX < 20 ) {
@@ -113,11 +115,10 @@ var event_bind = {
 		},
 
 		index_touchmove : function(e) {
-			console.log('index_touchmove');
+
 			if ( event_bind.touch_flag == 1 ) {
+
 				var point = e.touches[0];
-
-
 				var dis = point.pageX - event_bind.start_X;
 				var left = -200;
 				left = left + dis;
@@ -131,7 +132,6 @@ var event_bind = {
 		},
 
 		index_touchend : function(e) {
-			// console.log('index_touchend');
 			var left = event_bind.get_left('#side_menu');
 
 			if ( left < -100 ) {
