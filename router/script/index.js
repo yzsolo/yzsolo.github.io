@@ -84,11 +84,16 @@ var event_bind = {
 		},
 
 		menu_change : function(e) {
-			// console.log('click');
-
-			$("#index-span").find('i').css('left') === '-3px'?
-			event_bind.side_change('-9px', '0px', true):event_bind.side_change('-3px', '-200px', false);
-			stopBubble(e);
+			var left = event_bind.get_left("#side_menu");
+			console.log('click');
+			if( left === -200 || left === 0) {
+				left === -200?
+				event_bind.side_change('-9px', '0px', true):event_bind.side_change('-3px', '-200px', false);
+			} else {
+				return null;
+			}
+			
+			// stopBubble(e);
 
 		},
 
@@ -158,8 +163,8 @@ var event_bind = {
 	},
 
 	side_change : function(i, menu, flag, speed) {
-		var speed = speed?speed:500;
-		// console.log(speed);
+		var speed = speed?speed:300;
+		console.log(speed);
 
 		$("#index-span").find('i').animate({'left': i}, speed, 'ease-inout');
 		$("#side_menu").animate({'left': menu}, speed, 'ease-inout');
