@@ -170,8 +170,8 @@ var event_bind = {
 
 			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, speed, 'ease-inout');
 
-			var json={time:new Date().getTime()};
-			window.history.pushState(json, '', 'http://aresyz.com/router/#menu');
+			// var json={time:new Date().getTime()};
+			// window.history.pushState(json, '', 'http://aresyz.com/router/#menu');
 
 		} else {
 
@@ -181,8 +181,8 @@ var event_bind = {
 				$("#shade").css({'display': 'none'});
 			}, speed);
 
-			var json={time:new Date().getTime()};
-			window.history.pushState(json, '', 'http://aresyz.com/router/#index');
+			// var json={time:new Date().getTime()};
+			// window.history.pushState(json, '', 'http://aresyz.com/router/#index');
 
 
 		}
