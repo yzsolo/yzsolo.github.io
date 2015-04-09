@@ -59,12 +59,12 @@ header {
 	  color: #fff;
 	  background-color: #11A0EA;
 }
-header a {
+header span {
 	float: left;
 	width: 62px;
 	text-align: right;
 }
-header a i {
+header span i {
 	position: absolute;
 	top: 14px;
 	left: -3px;

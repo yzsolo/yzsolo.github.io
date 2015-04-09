@@ -170,8 +170,8 @@ var event_bind = {
 
 			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, speed, 'ease-inout');
 
-			// var json={time:new Date().getTime()};
-			// window.history.pushState(json, '', 'http://aresyz.com/router/#menu');
+			var json={time:new Date().getTime()};
+			window.history.pushState(json, '', 'http://aresyz.com/router/#menu');
 
 		} else {
 
@@ -181,8 +181,8 @@ var event_bind = {
 				$("#shade").css({'display': 'none'});
 			}, speed);
 
-			// var json={time:new Date().getTime()};
-			// window.history.pushState(json, '', 'http://aresyz.com/router/#index');
+			var json={time:new Date().getTime()};
+			window.history.pushState(json, '', 'http://aresyz.com/router/#index');
 
 
 		}
@@ -193,14 +193,14 @@ var event_bind = {
 
 event_bind.eve_bind();
 
-window.onhashChange = function() {
+window.onpopstate = function() {
 
  	if( window.location.hash == '#menu' ) {
  		console.log('#menu');
 
  		if(event_bind.get_left('#index-span') != -9) {
  			$("#index-span").trigger('click');
- 			$("#index-span").attr("href", "http://aresyz.com/router/#index");
+ 			// $("#index-span").attr("href", "http://aresyz.com/router/#index");
  		}
 
  	} else if ( window.location.hash == '#index' ) {
@@ -208,7 +208,7 @@ window.onhashChange = function() {
 
  		if(event_bind.get_left('#index-span') != -3) {
  			$("#index-span").trigger('click');
- 			$("#index-span").attr("href", "http://aresyz.com/router/#menu");
+ 			// $("#index-span").attr("href", "http://aresyz.com/router/#menu");
  		}
  		
  	}
