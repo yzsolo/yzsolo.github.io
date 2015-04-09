@@ -196,19 +196,19 @@ event_bind.eve_bind();
 window.onpopstate = function() {
 
  	if( window.location.hash == '#menu' ) {
- 		console.log('#menu');
 
  		if(event_bind.get_left('#index-span') != -9) {
+
  			$("#index-span").trigger('click');
- 			// $("#index-span").attr("href", "http://aresyz.com/router/#index");
+
  		}
 
  	} else if ( window.location.hash == '#index' ) {
- 		console.log('#index');
 
  		if(event_bind.get_left('#index-span') != -3) {
+
  			$("#index-span").trigger('click');
- 			// $("#index-span").attr("href", "http://aresyz.com/router/#menu");
+
  		}
  		
  	}
