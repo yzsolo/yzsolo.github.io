@@ -33,6 +33,7 @@ var event_bind = {
 			    eve = ele_eve[1];
 				$(ele).on(eve, this.eve_detail[callback]);
 			}
+
 		}
 	},
 
@@ -168,6 +169,8 @@ var event_bind = {
 		if (flag) {
 
 			$("#shade").css({'display': 'block'}).animate({'opacity': '0.7'}, speed, 'ease-inout');
+			var json={time:new Date().getTime()};
+			window.history.pushState(json, '', 'http://aresyz.com/router/#menu');
 
 		} else {
 
@@ -175,6 +178,9 @@ var event_bind = {
 			setTimeout(function() {
 				$("#shade").css({'display': 'none'});
 			}, speed);
+			var json={time:new Date().getTime()};
+			window.history.pushState(json, '', 'http://aresyz.com/router/#index');
+
 
 		}
 
@@ -182,3 +188,19 @@ var event_bind = {
 }
 
 event_bind.eve_bind();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
