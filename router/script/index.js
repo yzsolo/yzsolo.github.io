@@ -188,6 +188,16 @@ var event_bind = {
 }
 
 event_bind.eve_bind();
+window.onhashChange = hashchange;
+ function hashchange () {
+ 	if( location.hash == '#menu' ) {
+ 		if(event_bind.get_left('#index-span') != -9)
+ 		$("#index-span").trigger('click');
+ 	} else if ( location.hash == '#index' ) {
+ 		if(event_bind.get_left('#index-span') != -3)
+ 		$("#index-span").trigger('click');
+ 	}
+ }
 
 
 
