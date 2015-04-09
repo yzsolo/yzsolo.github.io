@@ -192,8 +192,11 @@ var event_bind = {
 }
 
 event_bind.eve_bind();
+
 popstate();
+
 window.onpopstate = popstate;
+
 function popstate() {
 
  	if( window.location.hash == '#menu' ) {
