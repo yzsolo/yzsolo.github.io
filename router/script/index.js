@@ -192,9 +192,9 @@ var event_bind = {
 }
 
 event_bind.eve_bind();
-window.onhashChange = hashchange;
 
- function hashchange () {
+window.onhashChange = function() {
+
  	if( window.location.hash == '#menu' ) {
  		console.log('#menu');
 
@@ -210,7 +210,7 @@ window.onhashChange = hashchange;
  		}
  		
  	}
- }
+}
 
 
 
