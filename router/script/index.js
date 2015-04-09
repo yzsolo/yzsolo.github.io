@@ -72,11 +72,11 @@ var event_bind = {
 
 			if ( left < -100 ) {
 				// console.log('-100');
-				event_bind.side_change('-3px', '-200px', false, 100);
+				event_bind.side_change('-3px', '-200px', false);
 
 			} else {
 
-				event_bind.side_change('-9px', '0px', true, 100);
+				event_bind.side_change('-9px', '0px', true);
 
 			}
 			stopBubble(e);
