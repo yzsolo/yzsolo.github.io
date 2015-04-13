@@ -24,11 +24,11 @@ header {
 #index-search {
 	width: 67%;
     height: 40px;
+    text-indent: 10px;
     /*line-height:40px;*/
     float: left;
     border-radius: 5px;
     border: 1px solid #999;
-    text-indent: 10px;
 }
 #search-button {
 	position: absolute;
