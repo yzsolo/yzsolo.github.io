@@ -2,7 +2,7 @@
 	width: 94%;
 	min-height: 200px;
 	margin: 0 auto;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	padding-top: 10px;
 	padding-bottom: 1px;
 	box-shadow:  0 0 4px #cacaca;
@@ -79,7 +79,7 @@
 	width: 94%;
 	height: 46px;
 	margin: 10px auto;
-	font-size: 0.6em;
+	font-size: 0.9em;
 }
 #detail-wechat {
 	width: 47%;
@@ -116,7 +116,7 @@
 	min-height: 300px;
 	margin: 0 auto 20px auto;
 	padding-top: 8px;
-	font-size: 0.8em;
+	font-size: 0.9em;
 	box-shadow:  0 0 4px #cacaca;
 }
 #detail-title {
