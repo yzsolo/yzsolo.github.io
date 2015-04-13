@@ -218,6 +218,11 @@ function popstate() {
  	}
 }
 
+//存在问题： 
+//1，shade同时绑定了click和toush事件让滑动时间加快
+//2，快速点击index-span按钮会导致滑动抽风
+//3，之前把menu滑出事件绑定到#index,导致shade出现后，会有穿透现象
+
 
 
 
