@@ -1,9 +1,10 @@
 #detail-header {
 	width: 94%;
-	height: 200px;
+	min-height: 200px;
 	margin: 0 auto;
 	font-size: 0.8em;
 	padding-top: 10px;
+	padding-bottom: 1px;
 	box-shadow:  0 0 4px #cacaca;
 }
 #detail-logo {
