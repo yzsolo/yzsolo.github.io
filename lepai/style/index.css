@@ -24,7 +24,7 @@ header {
 #index-search {
 	width: 67%;
     height: 40px;
-    line-height:40px;
+    /*line-height:40px;*/
     float: left;
     border-radius: 5px;
     border: 1px solid #999;
