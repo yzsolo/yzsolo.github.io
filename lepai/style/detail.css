@@ -1,0 +1,159 @@
+#detail-header {
+	width: 94%;
+	height: 200px;
+	margin: 0 auto;
+	font-size: 0.8em;
+	padding-top: 10px;
+	box-shadow:  0 0 4px #cacaca;
+}
+#detail-logo {
+	width: 100%;
+	text-indent: 2px;
+}
+#detail-header p img {
+	width: 90px;
+	height: 31px;
+}
+#detail-header section {
+	width: 100%;
+}
+#detail-header section:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.detail-img {
+	width: 56px;
+	height: 56px;
+	float: left;
+	margin-left: 8px;
+	margin-top: 7px;
+	border-radius: 32px;
+}
+.detail-img img {
+	width: 100%;
+	height: 100%;
+	border-radius: 35px;
+}
+.female {
+	color: rgb(224,50,58);
+}
+.detail-imf {
+	width:75%;
+	height:58px;
+	margin-top: 10px;
+	float: left;
+}
+#detail-intro {
+	width: 94%;
+    margin: 20px auto;
+    color: rgb(134,134,134);
+}
+#detail-name {
+	float: left;
+	margin-left: 10px;
+}
+#detail-name img {
+	margin-left: 2px;
+	width: 12px;
+	height: 12px;
+}
+#detail-certification {
+	color: rgb(134,134,134);
+	float: right;
+}
+#detail-price {
+	float: left;
+	margin-left: 10px;
+	color: rgb(224,50,58);
+}
+#detail-changepwd {
+	float: right;
+}
+.detail-imf li {
+	height: 29px;
+	line-height: 29px;
+}
+#detail-contact {
+	width: 94%;
+	height: 46px;
+	margin: 10px auto;
+	font-size: 0.6em;
+}
+#detail-wechat {
+	width: 47%;
+	height: 46px;
+	line-height: 46px;
+	float: left;
+	box-shadow:  0 0 4px #cacaca;
+}
+#detail-wechat img,
+#detail-phone img {
+	width: 22px;
+	height: 22px;
+	float: left;
+	margin-left: 7%;
+	margin-top: 12px;
+}
+#detail-phone {
+	width: 47%;
+	height: 46px;
+	line-height: 46px;
+	float: right;
+	box-shadow:  0 0 4px #cacaca;
+}
+#detail-wechat span,
+#detail-phone span {
+	display: block;
+	width: 70%;
+	float: left;
+	text-indent: 5%;
+	line-height: 46px;
+}
+#detail-content {
+	width: 94%;
+	min-height: 300px;
+	margin: 0 auto 20px auto;
+	padding-top: 8px;
+	font-size: 0.8em;
+	box-shadow:  0 0 4px #cacaca;
+}
+#detail-title {
+	height: 15px;
+	width: 94%;
+    margin: 0 auto 8px auto;
+}
+#detail-title h2 {
+	height: 15px;
+	line-height: 17px;
+	float: left;
+	margin-left:2px;
+}
+#detail-title img {
+	width: 6px;
+	height: 15px;
+	float: left;
+}
+.detail-works {
+	width: 94%;
+	margin: 0 auto;
+}
+.detail-works img {
+	width:100%;
+	margin-top: 2px;
+}
+footer {
+	position: relative;
+	float: left;
+	font-size: 0.8em;
+	width: 100%;
+}
+footer p {
+	height: 130px;
+	line-height: 160px;
+	text-align: center;
+}
+footer p a {
+	color: #000;
+	text-decoration: none;
+}

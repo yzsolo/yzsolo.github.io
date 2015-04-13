@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>约拍</title>
+	<meta name="viewport" content="user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="stylesheet" href="style/reset.css">
+	<link rel="stylesheet" href="style/detail.css">
+	<link rel="stylesheet" href="../font-awesome-4.3.0/css/font-awesome.min.css">
+</head>
+<body>
+	<header id="detail-header">
+		<p id="detail-logo">
+			<a href="">
+				<img src="img/logo.png" alt="">
+			</a>
+		</p>
+		<section>
+			<div class="detail-img">
+				<img src="img/one.jpeg" alt="">
+			</div>
+			<ul class="detail-imf">
+				<li><span id="detail-name">UPLUSKY天天<img src="img/female.png" alt=""></span><span id="detail-certification">已认证</span></li>
+				<li><span id="detail-price">300元/次</span><span id="detail-changepwd">修改密码</span></li>
+			</ul>
+		</section>
+		<p id="detail-intro">常驻北区A座，旅拍当地三拍即走，约片请点下方联系微信。多拍便宜，分享至朋友圈更多优惠请大家多多支持哦～</p>
+	</header>
+	<section id="detail-contact">
+		<div id="detail-wechat">
+			<img src="img/wechat.png" alt="">
+			<span>zyxs0418</span>
+		</div>
+		<div id="detail-phone">
+			<img src="img/phone.png" alt="">
+			<span>18765937653</span>
+		</div>
+	</section>
+	<section id="detail-content">
+		<div id="detail-title">
+			<img src="img/pic-mark.png" alt="">
+			<h2>个人作品</h2>
+		</div>
+		<div class="detail-works">
+				<img src="img/one.jpeg" alt="">
+				<img src="img/two.jpeg" alt="">
+				<img src="img/three.jpeg" alt="">
+		</div>
+	</section>
+	<div id="SOHUCS"></div>
+	<script>
+	(function(){
+	    var expire_time = parseInt((new Date()).getTime()/(5*60*1000));
+	    var head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
+	    var script_version = document.createElement("script"),script_cyan = document.createElement("script");
+	    script_version.type = script_cyan.type = "text/javascript";
+	    script_version.charset = script_cyan.charset = "utf-8";
+	    script_version.onload = function(){
+	        script_cyan.id = 'changyan_mobile_js';
+	        script_cyan.src = 'http://changyan.itc.cn/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrIPykUx&'
+	                        + 'conf=prod_e25a94d5ca235b7a0c1c535260083967&version=' + cyan_resource_version;
+	        head.insertBefore(script_cyan, head.firstChild);
+	    };
+	    script_version.src = 'http://changyan.sohu.com/upload/mobile/wap-js/version.js?_='+expire_time;
+	    head.insertBefore(script_version, head.firstChild);
+	})();
+	</script>
+
+	<footer>
+		<p>
+			<span>&copy;2011-2015</span>
+			<span><a href="http://www.stuzone.com">stuzone.com</a></span>
+			Powered By
+			<span><a href="#">比特工场</a></span>
+		</p>
+	</footer>
+</body>
+</html>
