@@ -32,8 +32,8 @@ window.onload = function () {
 	for (var i = 0; i < star_num; i++) {
 		x = (window.innerWidth-5)*Math.random(),
 		y = (window.innerHeight-5)*Math.random(),
-		x_s = (Math.random()>0.5?1:-1)*Math.random()*1/3,
-		y_s = (Math.random()>0.5?1:-1)*Math.random()*1/3;
+		x_s = (Math.random()>0.5?1:-1)*Math.random()*1/5,
+		y_s = (Math.random()>0.5?1:-1)*Math.random()*1/5;
 		radius = Math.round(Math.random()*2)+0.5
 	
 		var option = {
