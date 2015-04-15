@@ -1,4 +1,4 @@
-/training中的实践项目以
+/training中的练手实践项目以
 ```
 http://aresyz.com/training/*filename*
 ```
