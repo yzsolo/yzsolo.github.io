@@ -139,18 +139,14 @@ html,body {width: 100%;height: 100%;overflow: hidden;background-color: #F2F2F2;}
 </div>
 <script>
 window.onload = function() {
-	setTimeout(function() {
 		var trans_hash = window.location.hash;
 		if (trans_hash == false) {
+			setTimeout(function(){}, 1000);
 			window.location = 'ctrip://wireless/home_more_translate_tool';
-			alert('h');
 		} else {
 			window.location.hash = '';
 		}
-	}, 500);
-	
 }
-	
 </script>
 </body>
 </html>
