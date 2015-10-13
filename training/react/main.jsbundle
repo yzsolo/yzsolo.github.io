@@ -1977,7 +1977,19 @@ duration:150}).
 
 start();}}]);return Category_guide;})(React.Component);
 
-;
+;var 
+
+Slider=(function(_React$Component6){_inherits(Slider,_React$Component6);function Slider(){_classCallCheck(this,Slider);_get(Object.getPrototypeOf(Slider.prototype),'constructor',this).apply(this,arguments);}_createClass(Slider,[{key:'render',value:
+function render(){
+return (
+React.createElement(View,{style:styles.slider},
+React.createElement(Text,{style:styles.slider_text},'slider component!')));}}]);return Slider;})(React.Component);
+
+
+
+
+
+
 
 var styles=StyleSheet.create({
 box:{
