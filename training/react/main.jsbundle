@@ -1371,14 +1371,13 @@ throw new TypeError(
 
 var index=findIndex.call(this,predicate,context);
 return index === -1?undefined:this[index];}});}})();
-__d('Homepage/index.ios.js',["react-native/Libraries/react-native/react-native.js","react-native-button/Button.js"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+__d('Homepage/index.ios.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
 
 
 
 
 
-var React=require('react-native/Libraries/react-native/react-native.js');
-var Button=require('react-native-button/Button.js');var 
+var React=require('react-native/Libraries/react-native/react-native.js');var 
 
 
 AppRegistry=
@@ -1390,18 +1389,12 @@ AppRegistry=
 
 React.AppRegistry;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var Animated=React.Animated;var StyleSheet=React.StyleSheet;var Text=React.Text;var View=React.View;var 
 
-Homepage=(function(_React$Component){_inherits(Homepage,_React$Component);
-function Homepage(props){_classCallCheck(this,Homepage);
-_get(Object.getPrototypeOf(Homepage.prototype),'constructor',this).call(this,props);
-this.state = {
-scaleAnim:new Animated.Value(0)};}_createClass(Homepage,[{key:'onPress',value:
-
-
-function onPress(){}},{key:'render',value:
-
+Homepage=(function(_React$Component){_inherits(Homepage,_React$Component);function Homepage(){_classCallCheck(this,Homepage);_get(Object.getPrototypeOf(Homepage.prototype),'constructor',this).apply(this,arguments);}_createClass(Homepage,[{key:'render',value:
 
 function render(){
+
 return (
+
 React.createElement(View,null,
 
 React.createElement(Slider,null),
@@ -1412,40 +1405,8 @@ React.createElement(Category_traffic,null),
 
 React.createElement(Category_travel,null),
 
-React.createElement(Category_guide,null)));}},{key:'_handlePress',value:
+React.createElement(Category_guide,null)));}}]);return Homepage;})(React.Component);
 
-
-
-function _handlePress(event){
-console.log('Pressed!');}}]);return Homepage;})(React.Component);
-
-;var 
-
-Category_hotel=(function(_React$Component2){_inherits(Category_hotel,_React$Component2);function Category_hotel(){_classCallCheck(this,Category_hotel);_get(Object.getPrototypeOf(Category_hotel.prototype),'constructor',this).apply(this,arguments);}_createClass(Category_hotel,[{key:'render',value:
-
-function render(){
-return (
-React.createElement(View,{style:styles.box},
-
-React.createElement(TouchableHighlight,{style:[styles.cell_first,styles.first_color]},
-React.createElement(Text,{style:styles.text},'酒店')),
-
-
-React.createElement(View,{style:[styles.container,styles.border_left]},
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.first_color,styles.border_bottom]},
-React.createElement(Text,{style:styles.text},'海外酒店')),
-
-React.createElement(TouchableHighlight,{onpress:function(){},style:[styles.cell,styles.first_color]},
-React.createElement(Text,{style:styles.text},'特惠酒店'))),
-
-
-
-React.createElement(View,{style:styles.container},
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.first_color,styles.topright_radius,styles.border_bottom]},
-React.createElement(Text,{style:styles.text},'团购')),
-
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.first_color,styles.bottomright_radius]},
-React.createElement(Text,{style:styles.text},'客栈·公寓')))));}}]);return Category_hotel;})(React.Component);
 
 
 
@@ -1453,95 +1414,76 @@ React.createElement(Text,{style:styles.text},'客栈·公寓')))));}}]);return C
 
 ;var 
 
-Category_traffic=(function(_React$Component3){_inherits(Category_traffic,_React$Component3);function Category_traffic(){_classCallCheck(this,Category_traffic);_get(Object.getPrototypeOf(Category_traffic.prototype),'constructor',this).apply(this,arguments);}_createClass(Category_traffic,[{key:'render',value:
-function render(){
-return (
-React.createElement(View,{style:styles.box},
+Category_hotel=(function(_React$Component2){_inherits(Category_hotel,_React$Component2);
 
-React.createElement(TouchableHighlight,{style:[styles.cell_first,styles.second_color]},
-React.createElement(Text,{style:styles.text},'机票')),
+function Category_hotel(props){_classCallCheck(this,Category_hotel);
+_get(Object.getPrototypeOf(Category_hotel.prototype),'constructor',this).call(this,props);
 
-
-React.createElement(View,{style:[styles.container,styles.border_left]},
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.second_color,styles.border_bottom]},
-React.createElement(Text,{style:styles.text},'火车票')),
-
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.second_color]},
-React.createElement(Text,{style:styles.text},'接送机'))),
-
-
-
-React.createElement(View,{style:styles.container},
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.second_color,styles.topright_radius,styles.border_bottom]},
-React.createElement(Text,{style:styles.text},'汽车票')),
-
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.second_color,styles.bottomright_radius]},
-React.createElement(Text,{style:styles.text},'自驾·专车')))));}}]);return Category_traffic;})(React.Component);
-
-
-
-
-
-;var 
-
-Category_travel=(function(_React$Component4){_inherits(Category_travel,_React$Component4);function Category_travel(){_classCallCheck(this,Category_travel);_get(Object.getPrototypeOf(Category_travel.prototype),'constructor',this).apply(this,arguments);}_createClass(Category_travel,[{key:'render',value:
-function render(){
-return (
-React.createElement(View,{style:styles.box},
-
-React.createElement(TouchableHighlight,{style:[styles.cell_first,styles.third_color]},
-React.createElement(Text,{style:styles.text},'旅游')),
-
-
-React.createElement(View,{style:[styles.container,styles.border_left]},
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.third_color,styles.border_bottom]},
-React.createElement(Text,{style:styles.text},'门票·玩乐')),
-
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.third_color]},
-React.createElement(Text,{style:styles.text},'周末游'))),
-
-
-
-React.createElement(View,{style:styles.container},
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.third_color,styles.topright_radius,styles.border_bottom]},
-React.createElement(Text,{style:styles.text},'邮轮')),
-
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.third_color,styles.bottomright_radius]},
-React.createElement(Text,{style:styles.text},'签证')))));}}]);return Category_travel;})(React.Component);
-
-
-
-
-
-;var 
-
-Category_guide=(function(_React$Component5){_inherits(Category_guide,_React$Component5);
-function Category_guide(props){_classCallCheck(this,Category_guide);
-_get(Object.getPrototypeOf(Category_guide.prototype),'constructor',this).call(this,props);
 this.state = {
-Anim:new Animated.Value(1),
+Anim1:new Animated.Value(1),
+Anim2:new Animated.Value(1),
+Anim3:new Animated.Value(1),
 Anim4:new Animated.Value(1),
-Anim5:new Animated.Value(1)};}_createClass(Category_guide,[{key:'render',value:
+Anim5:new Animated.Value(1)};}_createClass(Category_hotel,[{key:'render',value:
+
+
 
 
 function render(){var _this=this;
+
 return (
+
 React.createElement(View,{style:styles.box},
 
-React.createElement(TouchableHighlight,{style:[styles.cell_first,styles.forth_color]},
-React.createElement(Text,{style:styles.text},'攻略·身边')),
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this.press(_this.state.Anim1);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim1);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim1);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[
+styles.cell_first,
+styles.first_color,
+{transform:[{scale:this.state.Anim1}]}]},
+
+
+React.createElement(Text,{style:styles.text},'酒店'))),
 
 
 
 
 React.createElement(View,{style:[styles.container,styles.border_left]},
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.forth_color,styles.border_bottom]},
-React.createElement(Text,{style:styles.text},'出境WiFi')),
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this.press(_this.state.Anim2);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim2);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim2);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.first_color,styles.border_bottom,{transform:[
+{scale:this.state.Anim2}]}]},
+
+
+React.createElement(Text,{style:styles.text},'海外酒店'))),
 
 
 
-React.createElement(TouchableHighlight,{style:[styles.cell,styles.forth_color]},
-React.createElement(Text,{style:styles.text},'礼品卡'))),
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this.press(_this.state.Anim3);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim3);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim3);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.first_color,{transform:[
+{scale:this.state.Anim3}]}]},
+
+
+React.createElement(Text,{style:styles.text},'特惠酒店')))),
+
 
 
 
@@ -1556,6 +1498,420 @@ onPressOut:function(){return _this.pressOut(_this.state.Anim4);},
 style:[styles.cell,{opacity:0}]},
 
 React.createElement(Animated.View,{
+style:[styles.cell,styles.first_color,styles.topright_radius,styles.border_bottom,{transform:[
+{scale:this.state.Anim4}]}]},
+
+
+React.createElement(Text,{style:styles.text},'团购'))),
+
+
+
+
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this.press(_this.state.Anim5);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim5);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim5);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{style:[styles.cell,styles.first_color,styles.bottomright_radius,{transform:[
+{scale:this.state.Anim5}]}]},
+
+React.createElement(Text,{style:styles.text},'客栈·公寓'))))));}},{key:'press',value:
+
+
+
+
+
+
+
+
+
+function press(tag){
+Animated.sequence([
+Animated.timing(
+tag,
+{
+toValue:0.92,
+duration:100}),
+
+
+Animated.timing(
+tag,
+{
+toValue:1,
+duration:100})]).
+
+
+start();}},{key:'pressIn',value:
+
+function pressIn(tag){
+Animated.timing(
+tag,
+{
+toValue:0.92,
+duration:150}).
+
+start();}},{key:'pressOut',value:
+
+function pressOut(tag){
+Animated.timing(
+tag,
+{
+toValue:1,
+duration:150}).
+
+start();}}]);return Category_hotel;})(React.Component);
+
+;var 
+
+Category_traffic=(function(_React$Component3){_inherits(Category_traffic,_React$Component3);
+function Category_traffic(props){_classCallCheck(this,Category_traffic);
+_get(Object.getPrototypeOf(Category_traffic.prototype),'constructor',this).call(this,props);
+this.state = {
+Anim1:new Animated.Value(1),
+Anim2:new Animated.Value(1),
+Anim3:new Animated.Value(1),
+Anim4:new Animated.Value(1),
+Anim5:new Animated.Value(1)};}_createClass(Category_traffic,[{key:'render',value:
+
+
+function render(){var _this2=this;
+return (
+React.createElement(View,{style:styles.box},
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this2.press(_this2.state.Anim1);},
+onPressIn:function(){return _this2.pressIn(_this2.state.Anim1);},
+onPressOut:function(){return _this2.pressOut(_this2.state.Anim1);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell_first,styles.second_color,{transform:[
+{scale:this.state.Anim1}]}]},
+
+
+React.createElement(Text,{style:styles.text},'机票'))),
+
+
+
+React.createElement(View,{style:[styles.container,styles.border_left]},
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this2.press(_this2.state.Anim2);},
+onPressIn:function(){return _this2.pressIn(_this2.state.Anim2);},
+onPressOut:function(){return _this2.pressOut(_this2.state.Anim2);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.second_color,styles.border_bottom,{transform:[
+{scale:this.state.Anim2}]}]},
+
+
+React.createElement(Text,{style:styles.text},'火车票'))),
+
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this2.press(_this2.state.Anim3);},
+onPressIn:function(){return _this2.pressIn(_this2.state.Anim3);},
+onPressOut:function(){return _this2.pressOut(_this2.state.Anim3);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.second_color,{transform:[
+{scale:this.state.Anim3}]}]},
+
+
+React.createElement(Text,{style:styles.text},'接送机')))),
+
+
+
+
+
+React.createElement(View,{style:styles.container},
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this2.press(_this2.state.Anim4);},
+onPressIn:function(){return _this2.pressIn(_this2.state.Anim4);},
+onPressOut:function(){return _this2.pressOut(_this2.state.Anim4);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.second_color,styles.topright_radius,styles.border_bottom,{transform:[
+{scale:this.state.Anim4}]}]},
+
+
+React.createElement(Text,{style:styles.text},'汽车票'))),
+
+
+
+
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this2.press(_this2.state.Anim5);},
+onPressIn:function(){return _this2.pressIn(_this2.state.Anim5);},
+onPressOut:function(){return _this2.pressOut(_this2.state.Anim5);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{style:[styles.cell,styles.second_color,styles.bottomright_radius,{transform:[
+{scale:this.state.Anim5}]}]},
+
+React.createElement(Text,{style:styles.text},'自驾·专车'))))));}},{key:'press',value:
+
+
+
+
+
+
+
+
+
+function press(tag){
+Animated.sequence([
+Animated.timing(
+tag,
+{
+toValue:0.92,
+duration:100}),
+
+
+Animated.timing(
+tag,
+{
+toValue:1,
+duration:100})]).
+
+
+start();}},{key:'pressIn',value:
+
+function pressIn(tag){
+Animated.timing(
+tag,
+{
+toValue:0.92,
+duration:150}).
+
+start();}},{key:'pressOut',value:
+
+function pressOut(tag){
+Animated.timing(
+tag,
+{
+toValue:1,
+duration:150}).
+
+start();}}]);return Category_traffic;})(React.Component);
+
+;var 
+
+Category_travel=(function(_React$Component4){_inherits(Category_travel,_React$Component4);
+function Category_travel(props){_classCallCheck(this,Category_travel);
+_get(Object.getPrototypeOf(Category_travel.prototype),'constructor',this).call(this,props);
+this.state = {
+Anim1:new Animated.Value(1),
+Anim2:new Animated.Value(1),
+Anim3:new Animated.Value(1),
+Anim4:new Animated.Value(1),
+Anim5:new Animated.Value(1)};}_createClass(Category_travel,[{key:'render',value:
+
+
+function render(){var _this3=this;
+return (
+React.createElement(View,{style:styles.box},
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this3.press(_this3.state.Anim1);},
+onPressIn:function(){return _this3.pressIn(_this3.state.Anim1);},
+onPressOut:function(){return _this3.pressOut(_this3.state.Anim1);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell_first,styles.third_color,{transform:[
+{scale:this.state.Anim1}]}]},
+
+
+React.createElement(Text,{style:styles.text},'旅游'))),
+
+
+
+React.createElement(View,{style:[styles.container,styles.border_left]},
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this3.press(_this3.state.Anim2);},
+onPressIn:function(){return _this3.pressIn(_this3.state.Anim2);},
+onPressOut:function(){return _this3.pressOut(_this3.state.Anim2);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.third_color,styles.border_bottom,{transform:[
+{scale:this.state.Anim2}]}]},
+
+
+React.createElement(Text,{style:styles.text},'门票·玩乐'))),
+
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this3.press(_this3.state.Anim3);},
+onPressIn:function(){return _this3.pressIn(_this3.state.Anim3);},
+onPressOut:function(){return _this3.pressOut(_this3.state.Anim3);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.third_color,{transform:[
+{scale:this.state.Anim3}]}]},
+
+
+React.createElement(Text,{style:styles.text},'周末游')))),
+
+
+
+
+
+React.createElement(View,{style:styles.container},
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this3.press(_this3.state.Anim4);},
+onPressIn:function(){return _this3.pressIn(_this3.state.Anim4);},
+onPressOut:function(){return _this3.pressOut(_this3.state.Anim4);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.third_color,styles.topright_radius,styles.border_bottom,{transform:[
+{scale:this.state.Anim4}]}]},
+
+
+React.createElement(Text,{style:styles.text},'邮轮'))),
+
+
+
+
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this3.press(_this3.state.Anim5);},
+onPressIn:function(){return _this3.pressIn(_this3.state.Anim5);},
+onPressOut:function(){return _this3.pressOut(_this3.state.Anim5);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{style:[styles.cell,styles.third_color,styles.bottomright_radius,{transform:[
+{scale:this.state.Anim5}]}]},
+
+React.createElement(Text,{style:styles.text},'签证'))))));}},{key:'press',value:
+
+
+
+
+
+
+
+
+
+function press(tag){
+Animated.sequence([
+Animated.timing(
+tag,
+{
+toValue:0.92,
+duration:100}),
+
+
+Animated.timing(
+tag,
+{
+toValue:1,
+duration:100})]).
+
+
+start();}},{key:'pressIn',value:
+
+function pressIn(tag){
+Animated.timing(
+tag,
+{
+toValue:0.92,
+duration:150}).
+
+start();}},{key:'pressOut',value:
+
+function pressOut(tag){
+Animated.timing(
+tag,
+{
+toValue:1,
+duration:150}).
+
+start();}}]);return Category_travel;})(React.Component);
+
+;var 
+
+Category_guide=(function(_React$Component5){_inherits(Category_guide,_React$Component5);
+function Category_guide(props){_classCallCheck(this,Category_guide);
+_get(Object.getPrototypeOf(Category_guide.prototype),'constructor',this).call(this,props);
+this.state = {
+Anim1:new Animated.Value(1),
+Anim2:new Animated.Value(1),
+Anim3:new Animated.Value(1),
+Anim4:new Animated.Value(1),
+Anim5:new Animated.Value(1)};}_createClass(Category_guide,[{key:'render',value:
+
+
+function render(){var _this4=this;
+return (
+React.createElement(View,{style:styles.box},
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this4.press(_this4.state.Anim1);},
+onPressIn:function(){return _this4.pressIn(_this4.state.Anim1);},
+onPressOut:function(){return _this4.pressOut(_this4.state.Anim1);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell_first,styles.forth_color,{transform:[
+{scale:this.state.Anim1}]}]},
+
+
+React.createElement(Text,{style:styles.text},'攻略·身边'))),
+
+
+
+React.createElement(View,{style:[styles.container,styles.border_left]},
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this4.press(_this4.state.Anim2);},
+onPressIn:function(){return _this4.pressIn(_this4.state.Anim2);},
+onPressOut:function(){return _this4.pressOut(_this4.state.Anim2);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.forth_color,styles.border_bottom,{transform:[
+{scale:this.state.Anim2}]}]},
+
+
+React.createElement(Text,{style:styles.text},'出境WiFi'))),
+
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this4.press(_this4.state.Anim3);},
+onPressIn:function(){return _this4.pressIn(_this4.state.Anim3);},
+onPressOut:function(){return _this4.pressOut(_this4.state.Anim3);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.forth_color,{transform:[
+{scale:this.state.Anim3}]}]},
+
+
+React.createElement(Text,{style:styles.text},'礼品卡')))),
+
+
+
+
+
+React.createElement(View,{style:styles.container},
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this4.press(_this4.state.Anim4);},
+onPressIn:function(){return _this4.pressIn(_this4.state.Anim4);},
+onPressOut:function(){return _this4.pressOut(_this4.state.Anim4);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
 style:[styles.cell,styles.forth_color,styles.topright_radius,styles.border_bottom,{transform:[
 {scale:this.state.Anim4}]}]},
 
@@ -1567,9 +1923,9 @@ React.createElement(Text,{style:styles.text},'美食·购物'))),
 
 
 React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this.press(_this.state.Anim5);},
-onPressIn:function(){return _this.pressIn(_this.state.Anim5);},
-onPressOut:function(){return _this.pressOut(_this.state.Anim5);},
+onPress:function(){return _this4.press(_this4.state.Anim5);},
+onPressIn:function(){return _this4.pressIn(_this4.state.Anim5);},
+onPressOut:function(){return _this4.pressOut(_this4.state.Anim5);},
 style:[styles.cell,{opacity:0}]},
 
 React.createElement(Animated.View,{style:[styles.cell,styles.forth_color,styles.bottomright_radius,{transform:[
@@ -1586,17 +1942,16 @@ React.createElement(Text,{style:styles.text},'更多'))))));}},{key:'press',valu
 
 
 function press(tag){
-this.setState({Anim:tag});
 Animated.sequence([
 Animated.timing(
-this.state.Anim,
+tag,
 {
 toValue:0.92,
 duration:100}),
 
 
 Animated.timing(
-this.state.Anim,
+tag,
 {
 toValue:1,
 duration:100})]).
@@ -1605,9 +1960,8 @@ duration:100})]).
 start();}},{key:'pressIn',value:
 
 function pressIn(tag){
-this.setState({Anim:tag});
 Animated.timing(
-this.state.Anim,
+tag,
 {
 toValue:0.92,
 duration:150}).
@@ -1615,26 +1969,13 @@ duration:150}).
 start();}},{key:'pressOut',value:
 
 function pressOut(tag){
-this.setState({Anim:tag});
 Animated.timing(
-this.state.Anim,
+tag,
 {
 toValue:1,
 duration:150}).
 
 start();}}]);return Category_guide;})(React.Component);
-
-;var 
-
-Slider=(function(_React$Component6){_inherits(Slider,_React$Component6);function Slider(){_classCallCheck(this,Slider);_get(Object.getPrototypeOf(Slider.prototype),'constructor',this).apply(this,arguments);}_createClass(Slider,[{key:'render',value:
-function render(){
-return (
-React.createElement(View,{style:styles.slider},
-React.createElement(Text,{style:styles.slider_text},'Here is the Slider component!')));}}]);return Slider;})(React.Component);
-
-
-
-
 
 ;
 
@@ -53895,135 +54236,6 @@ Object.keys(componentOrElement));}
 
 
 module.exports = findDOMNode;
-});
-__d('react-native-button/Button.js',["react-native/Libraries/react-native/react-native.js","react-native-button/coalesceNonElementChildren.js"],function(global, require, module, exports) {  'use strict';var _extends=Object.assign || function(target){for(var i=1;i < arguments.length;i++) {var source=arguments[i];for(var key in source) {if(Object.prototype.hasOwnProperty.call(source,key)){target[key] = source[key];}}}return target;};
-
-var React=require('react-native/Libraries/react-native/react-native.js');var 
-
-PropTypes=
-
-
-
-
-React.PropTypes;var StyleSheet=React.StyleSheet;var Text=React.Text;var TouchableOpacity=React.TouchableOpacity;var View=React.View;
-
-var coalesceNonElementChildren=require('react-native-button/coalesceNonElementChildren.js');
-
-var systemButtonOpacity=0.2;
-
-var Button=React.createClass({displayName:'Button',
-propTypes:_extends({},
-TouchableOpacity.propTypes,{
-disabled:PropTypes.bool,
-style:Text.propTypes.style}),
-
-
-render:function(){
-var touchableProps={
-activeOpacity:this._computeActiveOpacity()};
-
-if(!this.props.disabled){
-touchableProps.onPress = this.props.onPress;
-touchableProps.onPressIn = this.props.onPressIn;
-touchableProps.onPressOut = this.props.onPressOut;
-touchableProps.onLongPress = this.props.onLongPress;}
-
-
-return (
-React.createElement(TouchableOpacity,_extends({},touchableProps,{testID:this.props.testID}),
-this._renderGroupedChildren()));},
-
-
-
-
-_renderGroupedChildren:function(){var _this=this;
-var buttonStateStyle=this.props.disabled?styles.disabledText:null;
-
-var children=coalesceNonElementChildren(this.props.children,function(children,index){
-return (
-React.createElement(Text,{
-key:index,
-style:[styles.text,buttonStateStyle,_this.props.style]},
-children));});
-
-
-
-
-switch(children.length){
-case 0:
-return null;
-case 1:
-return children[0];
-default:
-return React.createElement(View,{style:styles.group},children);}},
-
-
-
-_computeActiveOpacity:function(){
-if(this.props.disabled){
-return 1;}
-
-return this.props.activeOpacity != null?
-this.props.activeOpacity:
-systemButtonOpacity;}});
-
-
-
-var styles=StyleSheet.create({
-text:{
-color:'#007aff',
-fontFamily:'.HelveticaNeueInterface-MediumP4',
-fontSize:17,
-fontWeight:'bold',
-textAlign:'center'},
-
-disabledText:{
-color:'#dcdcdc'},
-
-group:{
-flexDirection:'row',
-justifyContent:'space-between',
-alignItems:'center'}});
-
-
-
-module.exports = Button;
-});
-__d('react-native-button/coalesceNonElementChildren.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, module, exports) {  'use strict';
-
-var React=require('react-native/Libraries/react-native/react-native.js');
-
-function coalesceNonElementChildren(children,coalesceNodes){
-var coalescedChildren=[];
-
-var contiguousNonElements=[];
-React.Children.forEach(children,function(child){
-if(!React.isValidElement(child)){
-contiguousNonElements.push(child);
-return;}
-
-
-if(contiguousNonElements.length){
-var coalescedChild=coalesceNodes(contiguousNonElements,coalescedChildren.length);
-coalescedChildren.push(
-coalesceNodes(contiguousNonElements,coalescedChildren.length));
-
-contiguousNonElements = [];}
-
-
-coalescedChildren.push(child);});
-
-
-if(contiguousNonElements.length){
-coalescedChildren.push(
-coalesceNodes(contiguousNonElements,coalescedChildren.length));}
-
-
-
-return coalescedChildren;}
-
-
-module.exports = coalesceNonElementChildren;
 });
 ;require("Homepage/index.ios.js");
 //@ sourceMappingURL=/index.ios.map?platform=ios&dev=false
