@@ -1519,7 +1519,9 @@ Category_guide=(function(_React$Component5){_inherits(Category_guide,_React$Comp
 function Category_guide(props){_classCallCheck(this,Category_guide);
 _get(Object.getPrototypeOf(Category_guide.prototype),'constructor',this).call(this,props);
 this.state = {
-fadeAnim:new Animated.Value(1)};}_createClass(Category_guide,[{key:'render',value:
+Anim:new Animated.Value(1),
+Anim4:new Animated.Value(1),
+Anim5:new Animated.Value(1)};}_createClass(Category_guide,[{key:'render',value:
 
 
 function render(){var _this=this;
@@ -1546,9 +1548,17 @@ React.createElement(Text,{style:styles.text},'礼品卡'))),
 
 
 React.createElement(View,{style:styles.container},
-React.createElement(TouchableWithoutFeedback,{onPress:function(){return _this.press();},onPressIn:function(){return _this.pressIn();},onPressOut:function(){return _this.pressOut();},style:[styles.cell,{opacity:0,borderWidth:1,borderColor:'#000'}]},
-React.createElement(Animated.View,{style:[styles.cell,styles.forth_color,styles.topright_radius,styles.border_bottom,{transform:[
-{scale:this.state.fadeAnim}]}]},
+
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this.press(_this.state.Anim4);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim4);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim4);},
+style:[styles.cell,{opacity:0}]},
+
+React.createElement(Animated.View,{
+style:[styles.cell,styles.forth_color,styles.topright_radius,styles.border_bottom,{transform:[
+{scale:this.state.Anim4}]}]},
+
 
 React.createElement(Text,{style:styles.text},'美食·购物'))),
 
@@ -1556,9 +1566,14 @@ React.createElement(Text,{style:styles.text},'美食·购物'))),
 
 
 
-React.createElement(TouchableWithoutFeedback,{onPress:function(){return _this.press();},onPressIn:function(){return _this.pressIn();},onPressOut:function(){return _this.pressOut();},style:[styles.cell,{opacity:0,borderWidth:1,borderColor:'#000'}]},
+React.createElement(TouchableWithoutFeedback,{
+onPress:function(){return _this.press(_this.state.Anim5);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim5);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim5);},
+style:[styles.cell,{opacity:0}]},
+
 React.createElement(Animated.View,{style:[styles.cell,styles.forth_color,styles.bottomright_radius,{transform:[
-{scale:this.state.fadeAnim}]}]},
+{scale:this.state.Anim5}]}]},
 
 React.createElement(Text,{style:styles.text},'更多'))))));}},{key:'press',value:
 
@@ -1570,17 +1585,18 @@ React.createElement(Text,{style:styles.text},'更多'))))));}},{key:'press',valu
 
 
 
-function press(){
+function press(tag){
+this.setState({Anim:tag});
 Animated.sequence([
 Animated.timing(
-this.state.fadeAnim,
+this.state.Anim,
 {
 toValue:0.92,
 duration:100}),
 
 
 Animated.timing(
-this.state.fadeAnim,
+this.state.Anim,
 {
 toValue:1,
 duration:100})]).
@@ -1588,18 +1604,20 @@ duration:100})]).
 
 start();}},{key:'pressIn',value:
 
-function pressIn(){
+function pressIn(tag){
+this.setState({Anim:tag});
 Animated.timing(
-this.state.fadeAnim,
+this.state.Anim,
 {
 toValue:0.92,
 duration:150}).
 
 start();}},{key:'pressOut',value:
 
-function pressOut(){
+function pressOut(tag){
+this.setState({Anim:tag});
 Animated.timing(
-this.state.fadeAnim,
+this.state.Anim,
 {
 toValue:1,
 duration:150}).
