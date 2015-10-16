@@ -1371,13 +1371,12 @@ throw new TypeError(
 
 var index=findIndex.call(this,predicate,context);
 return index === -1?undefined:this[index];}});}})();
-__d('Homepage/index.ios.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+__d('Homepage/index.ios.js',["react-native/Libraries/react-native/react-native.js","Homepage/components/SearchMessage.js","Homepage/components/Category_model.js","Homepage/components/Slider_model.js"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
 
-
-
-
-
-var React=require('react-native/Libraries/react-native/react-native.js');var 
+var React=require('react-native/Libraries/react-native/react-native.js');
+var Category=require('Homepage/components/Category_model.js');
+var Slider=require('Homepage/components/Slider_model.js');
+var SearchMessage=require('Homepage/components/SearchMessage.js');var 
 
 
 AppRegistry=
@@ -1385,682 +1384,49 @@ AppRegistry=
 
 
 
+React.AppRegistry;var StyleSheet=React.StyleSheet;var TextInput=React.TextInput;var Text=React.Text;var View=React.View;
+
+var CategoryList={
+hotel:{
+text:['酒店','海外酒店','特惠酒店','团购','客栈·公寓'],
+color:'#ff697a'},
+
+traffic:{
+text:['机票','火车票','接送机','汽车票','自驾·专车'],
+color:'#3d98ff'},
+
+travel:{
+text:['旅游','门票·玩乐','周末游','邮轮','签证'],
+color:'#5ebe00'},
+
+guide:{
+text:['攻略·身边','出境WiFi','礼品卡','美食·购物','更多'],
+color:'#fc9720'}};var 
 
 
-React.AppRegistry;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var Animated=React.Animated;var StyleSheet=React.StyleSheet;var Text=React.Text;var View=React.View;var 
 
 Homepage=(function(_React$Component){_inherits(Homepage,_React$Component);function Homepage(){_classCallCheck(this,Homepage);_get(Object.getPrototypeOf(Homepage.prototype),'constructor',this).apply(this,arguments);}_createClass(Homepage,[{key:'render',value:
-
 function render(){
-
 return (
 
 React.createElement(View,null,
 
 React.createElement(Slider,null),
 
-React.createElement(Category_hotel,null),
+React.createElement(SearchMessage,null),
 
-React.createElement(Category_traffic,null),
+React.createElement(Category,{date:CategoryList.hotel}),
 
-React.createElement(Category_travel,null),
+React.createElement(Category,{date:CategoryList.traffic}),
 
-React.createElement(Category_guide,null)));}}]);return Homepage;})(React.Component);
+React.createElement(Category,{date:CategoryList.travel}),
 
+React.createElement(Category,{date:CategoryList.guide})));}}]);return Homepage;})(React.Component);
 
 
 
 
-
-;var 
-
-Category_hotel=(function(_React$Component2){_inherits(Category_hotel,_React$Component2);
-
-function Category_hotel(props){_classCallCheck(this,Category_hotel);
-_get(Object.getPrototypeOf(Category_hotel.prototype),'constructor',this).call(this,props);
-
-this.state = {
-Anim1:new Animated.Value(1),
-Anim2:new Animated.Value(1),
-Anim3:new Animated.Value(1),
-Anim4:new Animated.Value(1),
-Anim5:new Animated.Value(1)};}_createClass(Category_hotel,[{key:'render',value:
-
-
-
-
-function render(){var _this=this;
-
-return (
-
-React.createElement(View,{style:styles.box},
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this.press(_this.state.Anim1);},
-onPressIn:function(){return _this.pressIn(_this.state.Anim1);},
-onPressOut:function(){return _this.pressOut(_this.state.Anim1);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[
-styles.cell_first,
-styles.first_color,
-{transform:[{scale:this.state.Anim1}]}]},
-
-
-React.createElement(Text,{style:styles.text},'酒店'))),
-
-
-
-
-React.createElement(View,{style:[styles.container,styles.border_left]},
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this.press(_this.state.Anim2);},
-onPressIn:function(){return _this.pressIn(_this.state.Anim2);},
-onPressOut:function(){return _this.pressOut(_this.state.Anim2);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.first_color,styles.border_bottom,{transform:[
-{scale:this.state.Anim2}]}]},
-
-
-React.createElement(Text,{style:styles.text},'海外酒店'))),
-
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this.press(_this.state.Anim3);},
-onPressIn:function(){return _this.pressIn(_this.state.Anim3);},
-onPressOut:function(){return _this.pressOut(_this.state.Anim3);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.first_color,{transform:[
-{scale:this.state.Anim3}]}]},
-
-
-React.createElement(Text,{style:styles.text},'特惠酒店')))),
-
-
-
-
-
-
-React.createElement(View,{style:styles.container},
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this.press(_this.state.Anim4);},
-onPressIn:function(){return _this.pressIn(_this.state.Anim4);},
-onPressOut:function(){return _this.pressOut(_this.state.Anim4);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.first_color,styles.topright_radius,styles.border_bottom,{transform:[
-{scale:this.state.Anim4}]}]},
-
-
-React.createElement(Text,{style:styles.text},'团购'))),
-
-
-
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this.press(_this.state.Anim5);},
-onPressIn:function(){return _this.pressIn(_this.state.Anim5);},
-onPressOut:function(){return _this.pressOut(_this.state.Anim5);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{style:[styles.cell,styles.first_color,styles.bottomright_radius,{transform:[
-{scale:this.state.Anim5}]}]},
-
-React.createElement(Text,{style:styles.text},'客栈·公寓'))))));}},{key:'press',value:
-
-
-
-
-
-
-
-
-
-function press(tag){
-Animated.sequence([
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:100}),
-
-
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:100})]).
-
-
-start();}},{key:'pressIn',value:
-
-function pressIn(tag){
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:150}).
-
-start();}},{key:'pressOut',value:
-
-function pressOut(tag){
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:150}).
-
-start();}}]);return Category_hotel;})(React.Component);
-
-;var 
-
-Category_traffic=(function(_React$Component3){_inherits(Category_traffic,_React$Component3);
-function Category_traffic(props){_classCallCheck(this,Category_traffic);
-_get(Object.getPrototypeOf(Category_traffic.prototype),'constructor',this).call(this,props);
-this.state = {
-Anim1:new Animated.Value(1),
-Anim2:new Animated.Value(1),
-Anim3:new Animated.Value(1),
-Anim4:new Animated.Value(1),
-Anim5:new Animated.Value(1)};}_createClass(Category_traffic,[{key:'render',value:
-
-
-function render(){var _this2=this;
-return (
-React.createElement(View,{style:styles.box},
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this2.press(_this2.state.Anim1);},
-onPressIn:function(){return _this2.pressIn(_this2.state.Anim1);},
-onPressOut:function(){return _this2.pressOut(_this2.state.Anim1);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell_first,styles.second_color,{transform:[
-{scale:this.state.Anim1}]}]},
-
-
-React.createElement(Text,{style:styles.text},'机票'))),
-
-
-
-React.createElement(View,{style:[styles.container,styles.border_left]},
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this2.press(_this2.state.Anim2);},
-onPressIn:function(){return _this2.pressIn(_this2.state.Anim2);},
-onPressOut:function(){return _this2.pressOut(_this2.state.Anim2);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.second_color,styles.border_bottom,{transform:[
-{scale:this.state.Anim2}]}]},
-
-
-React.createElement(Text,{style:styles.text},'火车票'))),
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this2.press(_this2.state.Anim3);},
-onPressIn:function(){return _this2.pressIn(_this2.state.Anim3);},
-onPressOut:function(){return _this2.pressOut(_this2.state.Anim3);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.second_color,{transform:[
-{scale:this.state.Anim3}]}]},
-
-
-React.createElement(Text,{style:styles.text},'接送机')))),
-
-
-
-
-
-React.createElement(View,{style:styles.container},
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this2.press(_this2.state.Anim4);},
-onPressIn:function(){return _this2.pressIn(_this2.state.Anim4);},
-onPressOut:function(){return _this2.pressOut(_this2.state.Anim4);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.second_color,styles.topright_radius,styles.border_bottom,{transform:[
-{scale:this.state.Anim4}]}]},
-
-
-React.createElement(Text,{style:styles.text},'汽车票'))),
-
-
-
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this2.press(_this2.state.Anim5);},
-onPressIn:function(){return _this2.pressIn(_this2.state.Anim5);},
-onPressOut:function(){return _this2.pressOut(_this2.state.Anim5);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{style:[styles.cell,styles.second_color,styles.bottomright_radius,{transform:[
-{scale:this.state.Anim5}]}]},
-
-React.createElement(Text,{style:styles.text},'自驾·专车'))))));}},{key:'press',value:
-
-
-
-
-
-
-
-
-
-function press(tag){
-Animated.sequence([
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:100}),
-
-
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:100})]).
-
-
-start();}},{key:'pressIn',value:
-
-function pressIn(tag){
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:150}).
-
-start();}},{key:'pressOut',value:
-
-function pressOut(tag){
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:150}).
-
-start();}}]);return Category_traffic;})(React.Component);
-
-;var 
-
-Category_travel=(function(_React$Component4){_inherits(Category_travel,_React$Component4);
-function Category_travel(props){_classCallCheck(this,Category_travel);
-_get(Object.getPrototypeOf(Category_travel.prototype),'constructor',this).call(this,props);
-this.state = {
-Anim1:new Animated.Value(1),
-Anim2:new Animated.Value(1),
-Anim3:new Animated.Value(1),
-Anim4:new Animated.Value(1),
-Anim5:new Animated.Value(1)};}_createClass(Category_travel,[{key:'render',value:
-
-
-function render(){var _this3=this;
-return (
-React.createElement(View,{style:styles.box},
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this3.press(_this3.state.Anim1);},
-onPressIn:function(){return _this3.pressIn(_this3.state.Anim1);},
-onPressOut:function(){return _this3.pressOut(_this3.state.Anim1);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell_first,styles.third_color,{transform:[
-{scale:this.state.Anim1}]}]},
-
-
-React.createElement(Text,{style:styles.text},'旅游'))),
-
-
-
-React.createElement(View,{style:[styles.container,styles.border_left]},
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this3.press(_this3.state.Anim2);},
-onPressIn:function(){return _this3.pressIn(_this3.state.Anim2);},
-onPressOut:function(){return _this3.pressOut(_this3.state.Anim2);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.third_color,styles.border_bottom,{transform:[
-{scale:this.state.Anim2}]}]},
-
-
-React.createElement(Text,{style:styles.text},'门票·玩乐'))),
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this3.press(_this3.state.Anim3);},
-onPressIn:function(){return _this3.pressIn(_this3.state.Anim3);},
-onPressOut:function(){return _this3.pressOut(_this3.state.Anim3);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.third_color,{transform:[
-{scale:this.state.Anim3}]}]},
-
-
-React.createElement(Text,{style:styles.text},'周末游')))),
-
-
-
-
-
-React.createElement(View,{style:styles.container},
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this3.press(_this3.state.Anim4);},
-onPressIn:function(){return _this3.pressIn(_this3.state.Anim4);},
-onPressOut:function(){return _this3.pressOut(_this3.state.Anim4);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.third_color,styles.topright_radius,styles.border_bottom,{transform:[
-{scale:this.state.Anim4}]}]},
-
-
-React.createElement(Text,{style:styles.text},'邮轮'))),
-
-
-
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this3.press(_this3.state.Anim5);},
-onPressIn:function(){return _this3.pressIn(_this3.state.Anim5);},
-onPressOut:function(){return _this3.pressOut(_this3.state.Anim5);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{style:[styles.cell,styles.third_color,styles.bottomright_radius,{transform:[
-{scale:this.state.Anim5}]}]},
-
-React.createElement(Text,{style:styles.text},'签证'))))));}},{key:'press',value:
-
-
-
-
-
-
-
-
-
-function press(tag){
-Animated.sequence([
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:100}),
-
-
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:100})]).
-
-
-start();}},{key:'pressIn',value:
-
-function pressIn(tag){
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:150}).
-
-start();}},{key:'pressOut',value:
-
-function pressOut(tag){
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:150}).
-
-start();}}]);return Category_travel;})(React.Component);
-
-;var 
-
-Category_guide=(function(_React$Component5){_inherits(Category_guide,_React$Component5);
-function Category_guide(props){_classCallCheck(this,Category_guide);
-_get(Object.getPrototypeOf(Category_guide.prototype),'constructor',this).call(this,props);
-this.state = {
-Anim1:new Animated.Value(1),
-Anim2:new Animated.Value(1),
-Anim3:new Animated.Value(1),
-Anim4:new Animated.Value(1),
-Anim5:new Animated.Value(1)};}_createClass(Category_guide,[{key:'render',value:
-
-
-function render(){var _this4=this;
-return (
-React.createElement(View,{style:styles.box},
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this4.press(_this4.state.Anim1);},
-onPressIn:function(){return _this4.pressIn(_this4.state.Anim1);},
-onPressOut:function(){return _this4.pressOut(_this4.state.Anim1);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell_first,styles.forth_color,{transform:[
-{scale:this.state.Anim1}]}]},
-
-
-React.createElement(Text,{style:styles.text},'攻略·身边'))),
-
-
-
-React.createElement(View,{style:[styles.container,styles.border_left]},
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this4.press(_this4.state.Anim2);},
-onPressIn:function(){return _this4.pressIn(_this4.state.Anim2);},
-onPressOut:function(){return _this4.pressOut(_this4.state.Anim2);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.forth_color,styles.border_bottom,{transform:[
-{scale:this.state.Anim2}]}]},
-
-
-React.createElement(Text,{style:styles.text},'出境WiFi'))),
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this4.press(_this4.state.Anim3);},
-onPressIn:function(){return _this4.pressIn(_this4.state.Anim3);},
-onPressOut:function(){return _this4.pressOut(_this4.state.Anim3);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.forth_color,{transform:[
-{scale:this.state.Anim3}]}]},
-
-
-React.createElement(Text,{style:styles.text},'礼品卡')))),
-
-
-
-
-
-React.createElement(View,{style:styles.container},
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this4.press(_this4.state.Anim4);},
-onPressIn:function(){return _this4.pressIn(_this4.state.Anim4);},
-onPressOut:function(){return _this4.pressOut(_this4.state.Anim4);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{
-style:[styles.cell,styles.forth_color,styles.topright_radius,styles.border_bottom,{transform:[
-{scale:this.state.Anim4}]}]},
-
-
-React.createElement(Text,{style:styles.text},'美食·购物'))),
-
-
-
-
-
-React.createElement(TouchableWithoutFeedback,{
-onPress:function(){return _this4.press(_this4.state.Anim5);},
-onPressIn:function(){return _this4.pressIn(_this4.state.Anim5);},
-onPressOut:function(){return _this4.pressOut(_this4.state.Anim5);},
-style:[styles.cell,{opacity:0}]},
-
-React.createElement(Animated.View,{style:[styles.cell,styles.forth_color,styles.bottomright_radius,{transform:[
-{scale:this.state.Anim5}]}]},
-
-React.createElement(Text,{style:styles.text},'更多'))))));}},{key:'press',value:
-
-
-
-
-
-
-
-
-
-function press(tag){
-Animated.sequence([
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:100}),
-
-
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:100})]).
-
-
-start();}},{key:'pressIn',value:
-
-function pressIn(tag){
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:150}).
-
-start();}},{key:'pressOut',value:
-
-function pressOut(tag){
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:150}).
-
-start();}}]);return Category_guide;})(React.Component);
-
-;var 
-
-Slider=(function(_React$Component6){_inherits(Slider,_React$Component6);function Slider(){_classCallCheck(this,Slider);_get(Object.getPrototypeOf(Slider.prototype),'constructor',this).apply(this,arguments);}_createClass(Slider,[{key:'render',value:
-function render(){
-return (
-React.createElement(View,{style:styles.slider},
-React.createElement(Text,{style:styles.slider_text},'slider component!')));}}]);return Slider;})(React.Component);
-
-
-
-
-
-
-
-var styles=StyleSheet.create({
-box:{
-marginTop:10,
-marginLeft:10,
-marginRight:10,
-flexDirection:'row'},
-
-container:{
-flex:1,
-flexDirection:'column'},
-
-slider:{
-flex:1,
-height:140,
-justifyContent:'center',
-alignItems:'center',
-textAlign:'center'},
-
-slider_text:{
-fontSize:25,
-justifyContent:'center',
-textAlign:'center'},
-
-cell:{
-flex:1,
-height:50,
-justifyContent:'center'},
-
-cell_first:{
-height:100,
-width:120,
-justifyContent:'center',
-borderRightWidth:1,
-borderRightColor:'#fff',
-borderTopLeftRadius:6,
-borderBottomLeftRadius:6},
-
-topright_radius:{
-borderTopRightRadius:6},
-
-bottomright_radius:{
-borderBottomRightRadius:6},
-
-border_left:{
-borderRightWidth:1,
-borderRightColor:'#fff'},
-
-border_bottom:{
-borderBottomWidth:1,
-borderBottomColor:'#fff'},
-
-first_color:{
-backgroundColor:'#ff697a'},
-
-second_color:{
-backgroundColor:'#3d98ff'},
-
-third_color:{
-backgroundColor:'#5ebe00'},
-
-forth_color:{
-backgroundColor:'#fc9720'},
-
-text:{
-fontSize:18,
-justifyContent:'center',
-textAlign:'center',
-color:'#fff'}});
-
-
+;
 
 AppRegistry.registerComponent('Homepage',function(){return Homepage;});
 });
@@ -54248,6 +53614,935 @@ Object.keys(componentOrElement));}
 
 
 module.exports = findDOMNode;
+});
+__d('Homepage/components/Category_model.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+
+var React=require('react-native/Libraries/react-native/react-native.js');var 
+
+
+AppRegistry=
+
+
+
+
+
+
+React.AppRegistry;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var Animated=React.Animated;var StyleSheet=React.StyleSheet;var Text=React.Text;var View=React.View;var 
+
+Category_model=(function(_React$Component){_inherits(Category_model,_React$Component);
+
+function Category_model(props){_classCallCheck(this,Category_model);
+_get(Object.getPrototypeOf(Category_model.prototype),'constructor',this).call(this,props);
+this.state = {
+Anim1:new Animated.Value(1),
+Anim2:new Animated.Value(1),
+Anim3:new Animated.Value(1),
+Anim4:new Animated.Value(1),
+Anim5:new Animated.Value(1)};}_createClass(Category_model,[{key:'render',value:
+
+
+
+function render(){var _this=this;
+return (
+
+React.createElement(View,{style:styles.box},
+
+
+React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim1);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim1);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim1);}},
+
+React.createElement(Animated.View,{style:[styles.cell_first,{backgroundColor:this.props.date.color,transform:[{scale:this.state.Anim1}]}]},
+
+React.createElement(Text,{style:styles.text},this.props.date.text[0]))),
+
+
+
+
+
+
+React.createElement(View,{style:[styles.container,styles.border_left]},
+
+React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim2);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim2);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim2);}},
+
+React.createElement(Animated.View,{style:[styles.cell,styles.border_bottom,{backgroundColor:this.props.date.color,transform:[{scale:this.state.Anim2}]}]},
+
+React.createElement(Text,{style:styles.text},this.props.date.text[1]))),
+
+
+
+
+
+React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim3);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim3);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim3);}},
+
+React.createElement(Animated.View,{style:[styles.cell,{backgroundColor:this.props.date.color,transform:[{scale:this.state.Anim3}]}]},
+
+React.createElement(Text,{style:styles.text},this.props.date.text[2])))),
+
+
+
+
+
+
+
+React.createElement(View,{style:styles.container},
+
+React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim4);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim4);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim4);}},
+
+React.createElement(Animated.View,{style:[styles.cell,styles.topright_radius,styles.border_bottom,{backgroundColor:this.props.date.color,transform:[{scale:this.state.Anim4}]}]},
+
+React.createElement(Text,{style:styles.text},this.props.date.text[3]))),
+
+
+
+
+
+React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim5);},
+onPressIn:function(){return _this.pressIn(_this.state.Anim5);},
+onPressOut:function(){return _this.pressOut(_this.state.Anim5);}},
+
+React.createElement(Animated.View,{style:[styles.cell,styles.bottomright_radius,{backgroundColor:this.props.date.color,transform:[{scale:this.state.Anim5}]}]},
+
+React.createElement(Text,{style:styles.text},this.props.date.text[4]))))));}},{key:'press',value:
+
+
+
+
+
+
+
+
+
+
+function press(tag){
+Animated.sequence([
+Animated.timing(
+tag,
+{
+toValue:0.92,
+duration:100}),
+
+
+Animated.timing(
+tag,
+{
+toValue:1,
+duration:100})]).
+
+
+start();}},{key:'pressIn',value:
+
+function pressIn(tag){
+Animated.timing(
+tag,
+{
+toValue:0.92,
+duration:150}).
+
+start();}},{key:'pressOut',value:
+
+function pressOut(tag){
+Animated.timing(
+tag,
+{
+toValue:1,
+duration:150}).
+
+start();}}]);return Category_model;})(React.Component);
+
+;
+
+
+var styles=StyleSheet.create({
+box:{
+flex:1,
+marginTop:10,
+marginLeft:10,
+marginRight:10,
+flexDirection:'row'},
+
+container:{
+flex:1,
+flexDirection:'column'},
+
+cell:{
+flex:1,
+height:42,
+justifyContent:'center'},
+
+cell_first:{
+height:84,
+width:120,
+justifyContent:'center',
+borderRightWidth:1,
+borderRightColor:'#fff',
+borderTopLeftRadius:6,
+borderBottomLeftRadius:6},
+
+topright_radius:{
+borderTopRightRadius:6},
+
+bottomright_radius:{
+borderBottomRightRadius:6},
+
+border_left:{
+borderRightWidth:1,
+borderRightColor:'#fff'},
+
+border_bottom:{
+borderBottomWidth:1,
+borderBottomColor:'#fff'},
+
+first_color:{
+backgroundColor:'#ff697a'},
+
+second_color:{
+backgroundColor:'#3d98ff'},
+
+third_color:{
+backgroundColor:'#5ebe00'},
+
+forth_color:{
+backgroundColor:'#fc9720'},
+
+text:{
+fontSize:15,
+justifyContent:'center',
+textAlign:'center',
+color:'#fff'}});
+
+
+
+module.exports = Category_model;
+});
+__d('Homepage/components/Slider_model.js',["react-native/Libraries/react-native/react-native.js","react-native-swiper/dist/index.js"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+
+var React=require('react-native/Libraries/react-native/react-native.js');
+var Swiper=require('react-native-swiper/dist/index.js');var 
+
+
+AppRegistry=
+
+
+
+
+React.AppRegistry;var StyleSheet=React.StyleSheet;var Image=React.Image;var Text=React.Text;var View=React.View;
+
+var sliderImgs=[
+"http://images3.c-ctrip.com/rk/apph5/C1/201507/app_home_ad08_1536_307.png",
+"http://images3.c-ctrip.com/tg/2015/10/app/app_home_ad1302_1536_307.jpg",
+"http://images3.c-ctrip.com/rk/apph5/C1/201507/app_home_ad06_1536_307.png",
+"http://images3.c-ctrip.com/dj/app/201509/app_home_ad308_1536_307.png",
+"http://images3.c-ctrip.com/dj/app/201509/app_home_ad303_1536_307.png"];var 
+
+
+Slider_model=(function(_React$Component){_inherits(Slider_model,_React$Component);function Slider_model(){_classCallCheck(this,Slider_model);_get(Object.getPrototypeOf(Slider_model.prototype),'constructor',this).apply(this,arguments);}_createClass(Slider_model,[{key:'render',value:
+function render(){
+return (
+React.createElement(Swiper,{style:styles.wrapper,
+showsButtons:false,
+autoplay:true,
+height:145,
+showsPagination:true,
+dot:React.createElement(View,{style:{backgroundColor:'#fff',opacity:0.4,width:8,height:8,borderRadius:4,marginLeft:3,marginRight:3,marginTop:23,marginBottom:-13}}),
+activeDot:React.createElement(View,{style:{backgroundColor:'#fff',width:8,height:8,borderRadius:4,marginLeft:3,marginRight:3,marginTop:23,marginBottom:-13}})},
+
+React.createElement(View,{style:styles.color1},
+React.createElement(Image,{style:[styles.slide],source:{uri:sliderImgs[0]}})),
+
+React.createElement(View,{style:styles.color2},
+React.createElement(Image,{style:[styles.slide],source:{uri:sliderImgs[1]}})),
+
+React.createElement(View,{style:styles.color3},
+React.createElement(Image,{style:[styles.slide],source:{uri:sliderImgs[2]}})),
+
+React.createElement(View,{style:styles.color4},
+React.createElement(Image,{style:[styles.slide],source:{uri:sliderImgs[3]}})),
+
+React.createElement(View,{style:styles.color5},
+React.createElement(Image,{style:[styles.slide],source:{uri:sliderImgs[4]}}))));}}]);return Slider_model;})(React.Component);
+
+
+
+
+
+
+
+var styles=StyleSheet.create({
+wrapper:{
+height:80,
+backgroundColor:'#444'},
+
+slide:{
+height:80,
+marginTop:65},
+
+color1:{
+backgroundColor:'rgb(51,157,246)'},
+
+color2:{
+backgroundColor:'rgb(120,142,203)'},
+
+color3:{
+backgroundColor:'rgb(255,89,53)'},
+
+color4:{
+backgroundColor:'rgb(255,229,137)'},
+
+color5:{
+backgroundColor:'rgb(211,43,79)'}});
+
+
+
+module.exports = Slider_model;
+});
+__d('react-native-swiper/dist/index.js',["react-native/Libraries/react-native/react-native.js","react-timer-mixin/TimerMixin.js"],function(global, require, module, exports) {  'use strict';
+
+var _interopRequireWildcard=function(obj){return obj && obj.__esModule?obj:{'default':obj};};
+
+var _extends=Object.assign || function(target){for(var i=1;i < arguments.length;i++) {var source=arguments[i];for(var key in source) {if(Object.prototype.hasOwnProperty.call(source,key)){target[key] = source[key];}}}return target;};
+
+Object.defineProperty(exports,'__esModule',{
+value:true});
+
+
+
+
+
+
+
+
+var _React$StyleSheet$Text$View$ScrollView$TouchableOpacity=require('react-native/Libraries/react-native/react-native.js');
+
+var _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2=_interopRequireWildcard(_React$StyleSheet$Text$View$ScrollView$TouchableOpacity);
+
+
+
+
+
+
+
+var _TimerMixin=require('react-timer-mixin/TimerMixin.js');
+
+var _TimerMixin2=_interopRequireWildcard(_TimerMixin);
+
+var _Dimensions=require('Dimensions');
+
+var _Dimensions2=_interopRequireWildcard(_Dimensions);
+
+'use strict';
+var _Dimensions$get=_Dimensions2['default'].get('window');
+
+var width=_Dimensions$get.width;
+var height=_Dimensions$get.height;
+
+
+
+
+
+var styles=_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.StyleSheet.create({
+container:{
+backgroundColor:'transparent',
+position:'relative'},
+
+wrapper:{
+backgroundColor:'transparent'},
+
+slide:{
+backgroundColor:'transparent'},
+
+pagination_x:{
+position:'absolute',
+bottom:25,
+left:0,
+right:0,
+flexDirection:'row',
+flex:1,
+justifyContent:'center',
+alignItems:'center',
+backgroundColor:'transparent'},
+
+pagination_y:{
+position:'absolute',
+right:15,
+top:0,
+bottom:0,
+flexDirection:'column',
+flex:1,
+justifyContent:'center',
+alignItems:'center',
+backgroundColor:'transparent'},
+
+title:{
+height:30,
+justifyContent:'center',
+position:'absolute',
+paddingLeft:10,
+bottom:-30,
+left:0,
+flexWrap:'nowrap',
+width:250,
+backgroundColor:'transparent'},
+
+buttonWrapper:{
+backgroundColor:'transparent',
+flexDirection:'row',
+position:'absolute',
+top:0,
+left:0,
+flex:1,
+paddingHorizontal:10,
+paddingVertical:10,
+justifyContent:'space-between',
+alignItems:'center'},
+
+
+buttonText:{
+fontSize:50,
+color:'#007aff',
+fontFamily:'Arial'}});
+
+exports['default'] = _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createClass({
+displayName:'index',
+
+
+
+
+
+propTypes:{
+horizontal:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+children:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.node.isRequired,
+style:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View.propTypes.style,
+pagingEnabled:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+showsHorizontalScrollIndicator:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+showsVerticalScrollIndicator:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+bounces:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+scrollsToTop:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+removeClippedSubviews:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+automaticallyAdjustContentInsets:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+showsPagination:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+showsButtons:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+loop:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+autoplay:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+autoplayTimeout:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.number,
+autoplayDirection:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.bool,
+index:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.number,
+renderPagination:_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].PropTypes.func},
+
+mixins:[_TimerMixin2['default']],
+
+
+
+
+
+
+getDefaultProps:function getDefaultProps(){
+return {
+horizontal:true,
+pagingEnabled:true,
+showsHorizontalScrollIndicator:false,
+showsVerticalScrollIndicator:false,
+bounces:false,
+scrollsToTop:false,
+removeClippedSubviews:true,
+automaticallyAdjustContentInsets:false,
+showsPagination:true,
+showsButtons:false,
+loop:true,
+autoplay:false,
+autoplayTimeout:2.5,
+autoplayDirection:true,
+index:0};},
+
+
+
+
+
+
+getInitialState:function getInitialState(){
+var props=this.props;
+
+var initState={
+isScrolling:false,
+autoplayEnd:false};
+
+initState.total = props.children?props.children.length || 1:0;
+
+initState.index = initState.total > 1?Math.min(props.index,initState.total - 1):0;
+
+
+initState.dir = props.horizontal == false?'y':'x';
+initState.width = props.width || width;
+initState.height = props.height || height;
+initState.offset = {};
+
+if(initState.total > 1){
+var setup=props.loop?1:initState.index;
+initState.offset[initState.dir] = initState.dir == 'y'?initState.height * setup:initState.width * setup;}
+
+
+return initState;},
+
+
+
+
+
+
+autoplayTimer:null,
+
+componentWillMount:function componentWillMount(){
+this.props = this.injectState(this.props);},
+
+
+componentDidMount:function componentDidMount(){
+this.autoplay();},
+
+
+
+
+
+autoplay:function autoplay(){
+var _this=this;
+
+if(!this.props.autoplay || this.state.isScrolling || this.state.autoplayEnd){
+return;}
+clearTimeout(this.autoplayTimer);
+
+this.autoplayTimer = this.setTimeout(function(){
+if(!_this.props.loop && (_this.props.autoplayDirection?_this.state.index == _this.state.total - 1:_this.state.index == 0))return _this.setState({
+autoplayEnd:true});
+
+_this.scrollTo(_this.props.autoplayDirection?1:-1);},
+this.props.autoplayTimeout * 1000);},
+
+
+
+
+
+
+onScrollBegin:function onScrollBegin(e){
+var _this2=this;
+
+
+this.setState({
+isScrolling:true});
+
+
+this.setTimeout(function(){
+_this2.props.onScrollBeginDrag && _this2.props.onScrollBeginDrag(e,_this2.state,_this2);});},
+
+
+
+
+
+
+
+onScrollEnd:function onScrollEnd(e){
+var _this3=this;
+
+
+this.setState({
+isScrolling:false});
+
+
+this.updateIndex(e.nativeEvent.contentOffset,this.state.dir);
+
+
+
+this.setTimeout(function(){
+_this3.autoplay();
+
+
+_this3.props.onMomentumScrollEnd && _this3.props.onMomentumScrollEnd(e,_this3.state,_this3);});},
+
+
+
+
+
+
+
+
+updateIndex:function updateIndex(offset,dir){
+
+var state=this.state;
+var index=state.index;
+var diff=offset[dir] - state.offset[dir];
+var step=dir == 'x'?state.width:state.height;
+
+
+if(!diff){
+return;}
+
+
+index = index + diff / step;
+
+if(this.props.loop){
+if(index <= -1){
+index = state.total - 1;
+offset[dir] = step * state.total;}else 
+if(index >= state.total){
+index = 0;
+offset[dir] = step;}}
+
+
+
+this.setState({
+index:index,
+offset:offset});},
+
+
+
+
+
+
+scrollTo:function scrollTo(index){
+if(this.state.isScrolling){
+return;}
+var state=this.state;
+var diff=(this.props.loop?1:0) + index + this.state.index;
+var x=0;
+var y=0;
+if(state.dir == 'x')x = diff * state.width;
+if(state.dir == 'y')y = diff * state.height;
+this.refs.scrollView && this.refs.scrollView.scrollTo(y,x);
+
+
+this.setState({
+isScrolling:true,
+autoplayEnd:false});},
+
+
+
+
+
+
+renderPagination:function renderPagination(){
+
+
+if(this.state.total <= 1){
+return null;}
+var dots=[];
+for(var i=0;i < this.state.total;i++) {
+dots.push(i === this.state.index?this.props.activeDot || _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,{style:{
+backgroundColor:'#007aff',
+width:8,
+height:8,
+borderRadius:4,
+marginLeft:3,
+marginRight:3,
+marginTop:3,
+marginBottom:3}}):this.props.dot || _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,{style:{
+backgroundColor:'rgba(0,0,0,.2)',
+width:8,
+height:8,
+borderRadius:4,
+marginLeft:3,
+marginRight:3,
+marginTop:3,
+marginBottom:3}}));}
+
+
+return _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,
+{pointerEvents:'none',style:[styles['pagination_' + this.state.dir],this.props.paginationStyle]},
+dots);},
+
+
+
+renderTitle:function renderTitle(){
+var child=this.props.children[this.state.index];
+var title=child && child.props.title;
+return title?_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,
+{style:styles.title},
+this.props.children[this.state.index].props.title):
+null;},
+
+
+renderButtons:function renderButtons(){
+var _this4=this;
+
+var nextButton=this.props.nextButton || _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.Text,
+{style:[styles.buttonText,{color:!this.props.loop && this.state.index == this.state.total - 1?'rgba(0,0,0,0)':'#007aff'}]},
+'›');
+
+
+var prevButton=this.props.prevButton || _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.Text,
+{style:[styles.buttonText,{color:!this.props.loop && this.state.index == 0?'rgba(0,0,0,0)':'#007aff'}]},
+'‹');
+
+
+return _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,
+{pointerEvents:'box-none',style:[styles.buttonWrapper,{width:this.state.width,height:this.state.height},this.props.buttonWrapperStyle]},
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.TouchableOpacity,
+{onPress:function(){
+return !(!_this4.props.loop && _this4.state.index == 0) && _this4.scrollTo.call(_this4,-1);}},
+
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,
+null,
+prevButton)),
+
+
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.TouchableOpacity,
+{onPress:function(){
+return !(!_this4.props.loop && _this4.state.index == _this4.state.total - 1) && _this4.scrollTo.call(_this4,1);}},
+
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,
+null,
+nextButton)));},
+
+
+
+
+
+
+
+
+
+
+injectState:function injectState(props){
+var _this5=this;
+
+
+
+
+
+
+
+
+
+for(var prop in props) {
+
+if(typeof props[prop] === 'function' && prop !== 'onMomentumScrollEnd' && prop !== 'renderPagination' && prop !== 'onScrollBeginDrag'){
+(function(){
+var originResponder=props[prop];
+props[prop] = function(e){
+return originResponder(e,_this5.state,_this5);};})();}}
+
+
+
+
+
+return props;},
+
+
+
+
+
+
+render:function render(){
+var state=this.state;
+var props=this.props;
+var children=props.children;
+var index=state.index;
+var total=state.total;
+var loop=props.loop;
+var dir=state.dir;
+var key=0;
+
+var pages=[];
+var pageStyle=[{width:state.width,height:state.height},styles.slide];
+
+
+if(total > 1){
+
+
+pages = Object.keys(children);
+if(loop){
+pages.unshift(total - 1);
+pages.push(0);}
+
+
+pages = pages.map(function(page,i){
+return _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,
+{style:pageStyle,key:i},
+children[page]);});}else 
+
+
+pages = _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,
+{style:pageStyle},
+children);
+
+
+return _React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.View,
+{style:[styles.container,{
+width:state.width,
+height:state.height}]},
+
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity2['default'].createElement(
+_React$StyleSheet$Text$View$ScrollView$TouchableOpacity.ScrollView,
+_extends({ref:'scrollView'},
+props,{
+contentContainerStyle:[styles.wrapper,props.style],
+contentOffset:state.offset,
+onScrollBeginDrag:this.onScrollBegin,
+onMomentumScrollEnd:this.onScrollEnd}),
+pages),
+
+props.showsPagination && (props.renderPagination?this.props.renderPagination(state.index,state.total,this):this.renderPagination()),
+this.renderTitle(),
+this.props.showsButtons && this.renderButtons());}});
+
+
+
+module.exports = exports['default'];
+});
+__d('react-timer-mixin/TimerMixin.js',[],function(global, require, module, exports) {  'use strict';
+
+
+
+
+
+
+
+
+
+
+var GLOBAL=typeof window === 'undefined'?global:window;
+
+var setter=function(_setter,_clearer,array){
+return function(callback,delta){
+var id=_setter((function(){
+_clearer.call(this,id);
+callback.apply(this,arguments);}).
+bind(this),delta);
+
+if(!this[array]){
+this[array] = [id];}else 
+{
+this[array].push(id);}
+
+return id;};};
+
+
+
+var clearer=function(_clearer,array){
+return function(id){
+if(this[array]){
+var index=this[array].indexOf(id);
+if(index !== -1){
+this[array].splice(index,1);}}
+
+
+_clearer(id);};};
+
+
+
+var _timeouts='TimerMixin_timeouts';
+var _clearTimeout=clearer(GLOBAL.clearTimeout,_timeouts);
+var _setTimeout=setter(GLOBAL.setTimeout,_clearTimeout,_timeouts);
+
+var _intervals='TimerMixin_intervals';
+var _clearInterval=clearer(GLOBAL.clearInterval,_intervals);
+var _setInterval=setter(GLOBAL.setInterval,function(){},_intervals);
+
+var _immediates='TimerMixin_immediates';
+var _clearImmediate=clearer(GLOBAL.clearImmediate,_immediates);
+var _setImmediate=setter(GLOBAL.setImmediate,_clearImmediate,_immediates);
+
+var _rafs='TimerMixin_rafs';
+var _cancelAnimationFrame=clearer(GLOBAL.cancelAnimationFrame,_rafs);
+var _requestAnimationFrame=setter(GLOBAL.requestAnimationFrame,_cancelAnimationFrame,_rafs);
+
+var TimerMixin={
+componentWillUnmount:function(){
+this[_timeouts] && this[_timeouts].forEach(function(id){
+GLOBAL.clearTimeout(id);});
+
+this[_timeouts] = null;
+this[_intervals] && this[_intervals].forEach(function(id){
+GLOBAL.clearInterval(id);});
+
+this[_intervals] = null;
+this[_immediates] && this[_immediates].forEach(function(id){
+GLOBAL.clearImmediate(id);});
+
+this[_immediates] = null;
+this[_rafs] && this[_rafs].forEach(function(id){
+GLOBAL.cancelAnimationFrame(id);});
+
+this[_rafs] = null;},
+
+
+setTimeout:_setTimeout,
+clearTimeout:_clearTimeout,
+
+setInterval:_setInterval,
+clearInterval:_clearInterval,
+
+setImmediate:_setImmediate,
+clearImmediate:_clearImmediate,
+
+requestAnimationFrame:_requestAnimationFrame,
+cancelAnimationFrame:_cancelAnimationFrame};
+
+
+module.exports = TimerMixin;
+});
+__d('Homepage/components/SearchMessage.js',["react-native/Libraries/react-native/react-native.js","Dimensions"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+
+var React=require('react-native/Libraries/react-native/react-native.js');
+var Dimensions=require('Dimensions');var _Dimensions$get=
+Dimensions.get('window');var width=_Dimensions$get.width;var height=_Dimensions$get.height;var 
+
+
+AppRegistry=
+
+
+
+
+
+React.AppRegistry;var StyleSheet=React.StyleSheet;var TextInput=React.TextInput;var Image=React.Image;var Text=React.Text;var View=React.View;var 
+
+SearchMessage=(function(_React$Component){_inherits(SearchMessage,_React$Component);function SearchMessage(){_classCallCheck(this,SearchMessage);_get(Object.getPrototypeOf(SearchMessage.prototype),'constructor',this).apply(this,arguments);}_createClass(SearchMessage,[{key:'render',value:
+function render(){
+return (
+React.createElement(View,null,
+React.createElement(TextInput,{style:styles.textinput,placeholderTextColor:'#666',placeholder:'搜索:目的地/酒店/景点/航班号'})));}}]);return SearchMessage;})(React.Component);
+
+
+
+
+
+var styles=StyleSheet.create({
+textinput:{
+width:width - 20,
+paddingLeft:10,
+paddingRight:10,
+lineHeight:30,
+fontSize:12,
+height:30,
+position:'absolute',
+marginLeft:10,
+marginTop:-120,
+borderRadius:6,
+borderColor:'#888',
+borderWidth:0}});
+
+
+
+module.exports = SearchMessage;
 });
 ;require("Homepage/index.ios.js");
 //@ sourceMappingURL=/index.ios.map?platform=ios&dev=false
