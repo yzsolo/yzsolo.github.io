@@ -53648,7 +53648,7 @@ return (
 React.createElement(View,{style:styles.box},
 
 
-React.createElement(TouchableWithoutFeedback,{style:[styles.cell_first,{opacity:0}],
+React.createElement(TouchableWithoutFeedback,{style:[styles.cell_first_color,{opacity:0}],
 onPress:function(){return _this.press(_this.state.Anim1);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim1);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim1);}},
@@ -53780,6 +53780,13 @@ cell:{
 flex:1,
 height:42,
 justifyContent:'center'},
+
+cell_first_color:{
+height:84,
+width:120,
+justifyContent:'center',
+borderTopLeftRadius:6,
+borderBottomLeftRadius:6},
 
 cell_first:{
 height:84,
