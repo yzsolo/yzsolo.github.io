@@ -53652,6 +53652,7 @@ React.createElement(View,{style:styles.box},
 
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell_first,{marginRight:1,opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim1);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim1);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim1);}},
 
@@ -53667,6 +53668,7 @@ React.createElement(Text,{style:styles.text},this.props.date.text[0]))),
 React.createElement(View,{style:[styles.container,{marginRight:1}]},
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim2);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim2);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim2);}},
 
@@ -53679,6 +53681,7 @@ React.createElement(Text,{style:styles.text},this.props.date.text[1]))),
 
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim3);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim3);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim3);}},
 
@@ -53695,6 +53698,7 @@ React.createElement(Text,{style:styles.text},this.props.date.text[2])))),
 React.createElement(View,{style:styles.container},
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim4);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim4);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim4);}},
 
@@ -53707,12 +53711,13 @@ React.createElement(Text,{style:styles.text},this.props.date.text[3]))),
 
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim5);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim5);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim5);}},
 
 React.createElement(Animated.View,{style:[styles.cell,styles.bottomright_radius,{backgroundColor:this.props.date.color,transform:[{scale:this.state.Anim5}]}]},
 
-React.createElement(Text,{style:styles.text},this.props.date.text[4]))))));}},{key:'pressIn',value:
+React.createElement(Text,{style:styles.text},this.props.date.text[4]))))));}},{key:'press',value:
 
 
 
@@ -53722,12 +53727,21 @@ React.createElement(Text,{style:styles.text},this.props.date.text[4]))))));}},{k
 
 
 
+
+function press(tag){
+Animated.sequence([
+Animated.timing(tag,{toValue:0.92,duration:100}),
+Animated.timing(tag,{toValue:1,duration:100})]).
+start();
+AlertIOS.alert('press');}},{key:'pressIn',value:
 
 function pressIn(tag){
-Animated.timing(tag,{toValue:0.92,duration:150}).start();}},{key:'pressOut',value:
+Animated.timing(tag,{toValue:0.92,duration:150}).start();
+AlertIOS.alert('in');}},{key:'pressOut',value:
 
 function pressOut(tag){
-Animated.timing(tag,{toValue:1,duration:150}).start();}}]);return Category_model;})(React.Component);
+Animated.timing(tag,{toValue:1,duration:150}).start();
+AlertIOS.alert('out ');}}]);return Category_model;})(React.Component);
 
 ;
 
