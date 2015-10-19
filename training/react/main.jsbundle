@@ -53630,7 +53630,8 @@ AppRegistry=
 
 
 
-React.AppRegistry;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var Animated=React.Animated;var StyleSheet=React.StyleSheet;var Text=React.Text;var View=React.View;var 
+
+React.AppRegistry;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var Animated=React.Animated;var StyleSheet=React.StyleSheet;var Text=React.Text;var AlertIOS=React.AlertIOS;var View=React.View;var 
 
 Category_model=(function(_React$Component){_inherits(Category_model,_React$Component);
 
