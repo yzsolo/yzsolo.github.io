@@ -1371,12 +1371,13 @@ throw new TypeError(
 
 var index=findIndex.call(this,predicate,context);
 return index === -1?undefined:this[index];}});}})();
-__d('Homepage/index.ios.js',["react-native/Libraries/react-native/react-native.js","Homepage/components/Slider_model.js","Homepage/components/SearchMessage.js","Homepage/components/Category_model.js"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+__d('Homepage/index.ios.js',["react-native/Libraries/react-native/react-native.js","Homepage/components/Slider_model.js","Homepage/components/SearchMessage.js","Homepage/components/TabBar_model.js","Homepage/components/Category_model.js"],function(global, require, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
 
 var React=require('react-native/Libraries/react-native/react-native.js');
 var Category=require('Homepage/components/Category_model.js');
 var Slider=require('Homepage/components/Slider_model.js');
-var SearchMessage=require('Homepage/components/SearchMessage.js');var 
+var SearchMessage=require('Homepage/components/SearchMessage.js');
+var TabBar=require('Homepage/components/TabBar_model.js');var 
 
 
 AppRegistry=
@@ -1422,6 +1423,8 @@ React.createElement(Category,{date:CategoryList.traffic}),
 React.createElement(Category,{date:CategoryList.travel}),
 
 React.createElement(Category,{date:CategoryList.guide})));}}]);return Homepage;})(React.Component);
+
+
 
 
 
@@ -53649,7 +53652,6 @@ React.createElement(View,{style:styles.box},
 
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell_first,{marginRight:1,opacity:0}],
-onPress:function(){return _this.press(_this.state.Anim1);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim1);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim1);}},
 
@@ -53665,7 +53667,6 @@ React.createElement(Text,{style:styles.text},this.props.date.text[0]))),
 React.createElement(View,{style:[styles.container,{marginRight:1}]},
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
-onPress:function(){return _this.press(_this.state.Anim2);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim2);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim2);}},
 
@@ -53678,7 +53679,6 @@ React.createElement(Text,{style:styles.text},this.props.date.text[1]))),
 
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
-onPress:function(){return _this.press(_this.state.Anim3);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim3);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim3);}},
 
@@ -53695,7 +53695,6 @@ React.createElement(Text,{style:styles.text},this.props.date.text[2])))),
 React.createElement(View,{style:styles.container},
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
-onPress:function(){return _this.press(_this.state.Anim4);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim4);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim4);}},
 
@@ -53708,13 +53707,12 @@ React.createElement(Text,{style:styles.text},this.props.date.text[3]))),
 
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
-onPress:function(){return _this.press(_this.state.Anim5);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim5);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim5);}},
 
 React.createElement(Animated.View,{style:[styles.cell,styles.bottomright_radius,{backgroundColor:this.props.date.color,transform:[{scale:this.state.Anim5}]}]},
 
-React.createElement(Text,{style:styles.text},this.props.date.text[4]))))));}},{key:'press',value:
+React.createElement(Text,{style:styles.text},this.props.date.text[4]))))));}},{key:'pressIn',value:
 
 
 
@@ -53724,42 +53722,12 @@ React.createElement(Text,{style:styles.text},this.props.date.text[4]))))));}},{k
 
 
 
-
-function press(tag){
-Animated.sequence([
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:100}),
-
-
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:100})]).
-
-
-start();}},{key:'pressIn',value:
 
 function pressIn(tag){
-Animated.timing(
-tag,
-{
-toValue:0.92,
-duration:150}).
-
-start();}},{key:'pressOut',value:
+Animated.timing(tag,{toValue:0.92,duration:150}).start();}},{key:'pressOut',value:
 
 function pressOut(tag){
-Animated.timing(
-tag,
-{
-toValue:1,
-duration:150}).
-
-start();}}]);return Category_model;})(React.Component);
+Animated.timing(tag,{toValue:1,duration:150}).start();}}]);return Category_model;})(React.Component);
 
 ;
 
@@ -54545,6 +54513,45 @@ borderWidth:0}});
 
 
 module.exports = SearchMessage;
+});
+__d('Homepage/components/TabBar_model.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, module, exports) {  'use strict';
+
+var React=require('react-native/Libraries/react-native/react-native.js');var 
+
+
+StyleSheet=
+
+
+
+React.StyleSheet;var TabBarIOS=React.TabBarIOS;var Text=React.Text;var View=React.View;
+
+var TabBar_model=React.createClass({displayName:'TabBar_model',
+
+render:function(){
+return (
+React.createElement(TabBarIOS,{style:{justifyContent:'center'},tintColor:'rgb(30,160,209)',barTintColor:'rgb(247,246,246)'},
+React.createElement(TabBarIOS.Item,{title:'首页'}),
+
+
+React.createElement(TabBarIOS.Item,{title:'旅行日程'}),
+
+
+React.createElement(TabBarIOS.Item,{title:'客服中心'}),
+
+
+React.createElement(TabBarIOS.Item,{title:'我的'})));}});
+
+
+
+
+
+
+
+var styles=StyleSheet.create({});
+
+
+
+module.exports = TabBar_model;
 });
 ;require("Homepage/index.ios.js");
 //@ sourceMappingURL=/index.ios.map?platform=ios&dev=false
