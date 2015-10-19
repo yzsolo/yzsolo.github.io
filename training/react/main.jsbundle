@@ -53631,7 +53631,8 @@ AppRegistry=
 
 
 
-React.AppRegistry;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var Animated=React.Animated;var StyleSheet=React.StyleSheet;var Text=React.Text;var AlertIOS=React.AlertIOS;var View=React.View;var 
+
+React.AppRegistry;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var Animated=React.Animated;var StyleSheet=React.StyleSheet;var Text=React.Text;var AlertIOS=React.AlertIOS;var LinkingIOS=React.LinkingIOS;var View=React.View;var 
 
 Category_model=(function(_React$Component){_inherits(Category_model,_React$Component);
 
@@ -53699,6 +53700,7 @@ React.createElement(Text,{style:styles.text},this.props.date.text[2])))),
 React.createElement(View,{style:styles.container},
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim4);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim4);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim4);}},
 
@@ -53711,6 +53713,7 @@ React.createElement(Text,{style:styles.text},this.props.date.text[3]))),
 
 
 React.createElement(TouchableWithoutFeedback,{style:[styles.cell,{opacity:0}],
+onPress:function(){return _this.press(_this.state.Anim3);},
 onPressIn:function(){return _this.pressIn(_this.state.Anim5);},
 onPressOut:function(){return _this.pressOut(_this.state.Anim5);}},
 
@@ -53728,19 +53731,19 @@ React.createElement(Text,{style:styles.text},this.props.date.text[4]))))));}},{k
 
 
 function aler(){
-AlertIOS.alert('alert');}},{key:'press',value:
+LinkingIOS.openURL('ctrip://wireless/home_more_translate_tool');}},{key:'press',value:
 
 function press(tag){
 Animated.sequence([
-Animated.timing(tag,{toValue:0.92,duration:100}),
-Animated.timing(tag,{toValue:1,duration:100})]).
+Animated.timing(tag,{toValue:0.94,duration:60}),
+Animated.timing(tag,{toValue:1,duration:60})]).
 start();}},{key:'pressIn',value:
 
 function pressIn(tag){
-Animated.timing(tag,{toValue:0.92,duration:150}).start();}},{key:'pressOut',value:
+Animated.timing(tag,{toValue:0.94,duration:100}).start();}},{key:'pressOut',value:
 
 function pressOut(tag){
-Animated.timing(tag,{toValue:1,duration:150}).start(this.aler);}}]);return Category_model;})(React.Component);
+Animated.timing(tag,{toValue:1,duration:100}).start(this.aler);}}]);return Category_model;})(React.Component);
 
 
 ;
