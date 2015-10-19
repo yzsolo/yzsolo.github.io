@@ -53733,8 +53733,7 @@ function press(tag){
 Animated.sequence([
 Animated.timing(tag,{toValue:0.92,duration:100}),
 Animated.timing(tag,{toValue:1,duration:100})]).
-start();
-AlertIOS.alert('press');}},{key:'pressIn',value:
+start();}},{key:'pressIn',value:
 
 function pressIn(tag){
 Animated.timing(tag,{toValue:0.92,duration:150}).start();
