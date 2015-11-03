@@ -1387,7 +1387,8 @@ AppRegistry=
 
 
 
-React.AppRegistry;var StyleSheet=React.StyleSheet;var Image=React.Image;var Text=React.Text;var View=React.View;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var 
+
+React.AppRegistry;var StyleSheet=React.StyleSheet;var Image=React.Image;var Text=React.Text;var View=React.View;var TouchableHighlight=React.TouchableHighlight;var TouchableWithoutFeedback=React.TouchableWithoutFeedback;var VibrationIOS=React.VibrationIOS;var 
 
 Homepage=(function(_React$Component){_inherits(Homepage,_React$Component);function Homepage(){_classCallCheck(this,Homepage);_get(Object.getPrototypeOf(Homepage.prototype),'constructor',this).apply(this,arguments);}_createClass(Homepage,[{key:'render',value:
 function render(){
@@ -1499,6 +1500,7 @@ React.createElement(TouchableWithoutFeedback,{style:styles.cell,onPress:function
 React.createElement(View,{style:styles.cell},
 React.createElement(Image,{style:styles.imageTwo,source:require('image!icon-visa')}),
 React.createElement(Text,{style:styles.text},'保险·签证')))))));}}]);return Homepage;})(React.Component);
+
 
 
 
