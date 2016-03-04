@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="adr"></div>
+	<div id="but" style="width:100px;height:80px;background-color:#eee;"></div>
+	<script>
+	var but = document.getElementById('but');
+	but.onclick = function(){
+		navigator.geolocation.getCurrentPosition(function(position) {
+		  document.getElementById('adr').innerHTML=(position.coords.latitude, position.coords.longitude);
+		});
+	}
+	</script>
+</body>
+</html>
