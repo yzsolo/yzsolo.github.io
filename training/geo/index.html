@@ -11,7 +11,7 @@
 	var but = document.getElementById('but');
 	but.onclick = function(){
 		navigator.geolocation.getCurrentPosition(function(position) {
-		  document.getElementById('adr').innerHTML=(position.coords.latitude, position.coords.longitude);
+		  document.getElementById('adr').innerHTML=  '纬度： ' + position.coords.latitude + ' 经度： ' + position.coords.longitude);
 		});
 	}
 	</script>
