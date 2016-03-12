@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Countdown</title>
+</head>
+<body>
+	<div>
+		<span id='hour'></span>:<span id='minute'></span>:<span id='second'></span>
+	</div>
+	<script>
+	(function(){
+		/*
+		@type function
+		@功能 数据处理，将借口传回的开始时间，结束时间和当前时间转化为秒
+		@参数 hour: 00 - 23  
+		@参数 minute: 00 - 59
+		@参数 second: 00 - 59 
+		@解释 s前缀: 开始时间, e前缀: 结束时间
+		*/
+		var dateHandle = function(shour, sminute, ssecond, ehour, eminute, esecond){
+
+			var currentTime = new Date();
+			var currentHour = currentTime.getHours();
+			var currentMinute = currentTime.getMinutes();
+			var currentSecond = currentTime.getSeconds();
+			var sTime = shour*3600 + sminute*60 + ssecond;
+			var eTime = ehour*3600 + eminute*60 + esecond;
+			var cTime = currentHour*3600 + currentMinute*60 + currentSecond;
+			console.log(currentTime);
+			return {
+				'sTime': sTime,
+				'eTime': eTime,
+				'cTime': cTime
+			};
+		};
+
+		/*
+		@type function
+		@功能 数据处理，将秒数转化为相应的时分秒数据
+		@参数 Value: 间隔的秒数
+		*/
+		var timeTrans = function(Value) {
+			var hour, minute, second;
+			second = Value % 60;
+			minute = ((Value - second) % 3600) / 60;
+			hour = (Value - minute * 60 - second) / 3600;
+
+			return {
+				'displayHour': hour,
+				'displayMinute': minute,
+				'displaySecond': second
+			};
+		};
+
+		/*
+		@type function
+		@功能 完成倒计时的行为
+		@参数 date: 时分秒的时间数据
+		*/
+		var timeChange = function(date){
+			var eleHour = document.getElementById('hour');
+			var eleMinute = document.getElementById('minute');
+			var eleSecond = document.getElementById('second');
+			var hour = date.displayHour;
+			var minute = date.displayMinute;
+			var second = date.displaySecond;
+
+			var smallData = function(sdata) {
+				 return sdata < 10?('0' + sdata):sdata;
+			};
+
+			eleHour.innerText = smallData(hour);
+			eleMinute.innerText = smallData(minute);
+			eleSecond.innerText = smallData(second);
+
+			function changing() {
+
+				if (second !== 0) {
+					second--;
+					eleSecond.innerText = smallData(second);
+				} else {
+
+					if (minute !== 0) {
+						minute--;
+						second = 59;
+						second === 59&&(eleSecond.innerText = smallData(second));
+						eleMinute.innerText = smallData(minute);
+					} else {
+
+						if (hour !== 0) {
+							hour--;
+							minute = 59;
+							second = 59;
+							minute === 59&&(eleMinute.innerText = smallData(minute));
+							second === 59&&(eleSecond.innerText = smallData(second));
+							eleHour.innerText = smallData(hour);;
+						} else {
+							//当时间都为0的时候，隐藏倒计时模块
+						}
+					}
+					
+				}
+
+				setTimeout(changing, 1000);
+			};
+
+			setTimeout(changing, 1000);
+			
+		};
+
+		/*
+		@param hour: 00 - 23  
+		@param minute: 00 - 59
+		@param second: 00 - 59 
+		@detail 
+			s前缀: 开始时间; 
+			e前缀: 结束时间
+			if条件语句的执行顺序根据服务返回的时间段而定，如果短，则把cTime>=eTime放到第二个判断，节省时间
+		*/
+		var countdown = function(shour, sminute, ssecond, ehour, eminute, esecond) {
+			var displayHour, displayMinute, displaySecond;
+			var Time = dateHandle(shour, sminute, ssecond, ehour, eminute, esecond);
+
+			if (Time.cTime < Time.sTime) {
+				var scTime = Time.sTime - Time.cTime;
+				var scTimeData = timeTrans(scTime);
+				timeChange(scTimeData);
+			} else if (Time.cTime < Time.eTime) {
+				var ecTime = Time.eTime - Time.cTime;
+				var ecTimeData = timeTrans(ecTime);
+				timeChange(ecTimeData);
+			} else {
+				//这一块当前时间已经大雨结束时间，将计时器隐藏
+			}
+
+		};
+
+		countdown(10, 20, 30, 14, 23, 34);
+
+	})();
+	</script>
+</body>
+</html>
