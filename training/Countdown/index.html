@@ -125,10 +125,12 @@
 			if (Time.cTime < Time.sTime) {
 				var scTime = Time.sTime - Time.cTime;
 				var scTimeData = timeTrans(scTime);
+				console.log('即将开始');
 				timeChange(scTimeData);
 			} else if (Time.cTime < Time.eTime) {
 				var ecTime = Time.eTime - Time.cTime;
 				var ecTimeData = timeTrans(ecTime);
+				console.log('抢购中')
 				timeChange(ecTimeData);
 			} else {
 				//这一块当前时间已经大雨结束时间，将计时器隐藏
