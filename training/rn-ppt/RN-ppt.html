@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>RN</title>
+</head>
+<body>
+	<script>
+
+style
+/**********************************************************/
+	/*
+	 * 在jsx中使用样式
+	 */
+
+	//内联
+	<div style={{color: '#ff0000', fontSize: '14px'}}>Hello World.</div>
+
+
+	//外部
+	var style = {
+	  color: '#ff0000',
+	  fontSize: '14px'
+	};
+
+	var node = <div style={style}>HelloWorld.</div>;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ES6
+/**********************************************************/
+	/*
+	 * 解构赋值
+	 */
+
+	var {
+	  AppRegistry,
+	  StyleSheet,
+	  Text,
+	  View,
+	} = React;
+
+	//等价于：
+
+	var AppRegistry = React.AppRegistry;
+	var StyleSheet = React.StyleSheet;
+	var Text = React.Text;
+	var View = React.View;
+
+
+
+
+/**********************************************************/
+	/*
+	 * 箭头函数
+	 */
+
+	var arr = [1,2,3,4,5,6];
+	
+	var fun = (k) => console.log(k);
+	
+	arr.forEach(v => console.log(v));
+
+	//等价于：
+
+	var fun = function(k) {
+		console.log(k);
+	};
+
+	arr.forEach(function(v) {
+		console.log(v);
+	})
+
+
+
+
+/**********************************************************/
+	/*
+	 * 延展操作符
+	 * 允许传递数组或者类数组直接做为函数的参数而不用通过apply
+	 */
+
+	 var people=['Wayou','John','Sherlock'];
+
+	 sayHello(...people);
+
+	 //等价于：
+
+	 sayHello.apply(null,people);
+
+	//在JSX中使用，表示将一个对象的键值对与ReactElement的props属性合并
+	
+	var props = {};
+	props.foo = x;
+	props.bar = y;
+	var component = <Component {...props} />;
+	  
+	//等价于
+	var props = {};
+	props.foo = x;
+	props.bar = y;
+	var component = <Component foo={x} bar={y} />;
+
+
+
+
+/**********************************************************/
+	/*
+	 * class
+	 */
+
+	class PropertyView extends Component {
+		render : function() {
+		    return (
+		      <View></View>
+		    )
+	  	}
+	};
+
+	//等价于
+	var PropertyView = React.createClass({
+		render : function() {
+		    return (
+		      <View></View>
+		    )
+	  	}
+	});
+
+
+
+
+/**********************************************************/
+	/*
+	 * 方法定义
+	 * 新的语法糖，相对于之前完整的写法，少写了一个function
+	 */
+
+	class PropertyView extends Component {
+	  	render() {
+		    return (
+		      <View></View>
+		    )
+	  	}	
+	}
+
+	//等价于
+	class PropertyView extends Component {
+	  	render : function() {
+		    return (
+		      <View></View>
+		    )
+	  	}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+JSX
+/**********************************************************/
+	/*
+	 * 方法定义
+	 * 新的语法糖，相对于之前完整的写法，少写了一个function
+	 */
+
+	//js创建虚拟Dom
+	var list1 = React.createElement('li', null, 'ctrip list1');
+	var list2 = React.createElement('li', null, 'ctrip list2');
+	var main = React.createElement('ul', { className: 'ctrip-list' }, list1, list2);
+
+
+	//jsx创建虚拟Dom
+	var main =(
+	  <ul className="ctrip-list">
+	    <li>ctrip list1</li>
+	    <li>ctrip list2</li>
+	  </ul>
+	);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</script>
+</body>
+</html>
